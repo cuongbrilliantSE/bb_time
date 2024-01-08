@@ -1,0 +1,110 @@
+.wp {
+  margin: 30px 5px;
+}
+
+.txt {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-gray-7);
+  margin-bottom: 20px;
+}
+
+.img {
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.title {
+  color: var(--text-gray-10);
+  margin: 5px 0;
+}
+.btn {
+  cursor: pointer;
+  display: flex;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 5px 5px 0;
+  color: var(--blue-4);
+  gap: 8px;
+  p {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .txt {
+    // margin-left: 20px;
+    font-size: 24px;
+  }
+  .slider {
+    margin: 0 -20px;
+    :global .slick-slide {
+      & > div {
+        margin: 0 20px;
+      }
+    }
+  }
+  .title {
+    font-size: 20px;
+  }
+
+  .btn {
+    p {
+      font-size: 20px;
+    }
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .wp {
+    margin-top: 50px;
+  }
+  .txt {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  .title {
+    margin: 15px 0;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .slider {
+    margin: 0 -30px;
+    :global .slick-slide {
+      & > div {
+        margin: 0 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .slider {
+    margin: 0 -40px;
+    :global .slick-slide {
+      & > div {
+        margin: 0 40px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .title {
+    line-height: 35px;
+  }
+  .slider {
+    margin: 0 -45px;
+    :global .slick-slide {
+      & > div {
+        margin: 0 45px;
+      }
+    }
+  }
+}

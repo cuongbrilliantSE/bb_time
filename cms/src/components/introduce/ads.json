@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_introduce_ads",
+  "info": {
+    "displayName": "Ads",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "button": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@import "../../../../assets/styles/variables";
+
+.wp {
+  display: block;
+}
+
+.img {
+  height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px 0;
+  display: block;
+}
+
+.des {
+  display: flex;
+  gap: 5px;
+}
+.author {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.authorAvatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.authorName {
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+
+.divider {
+  width: 1px;
+  background-color: var(--text-gray-10);
+  margin: 3px 0;
+}
+.updatedAt {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.minRead {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  p {
+    margin-bottom: 2px;
+  }
+}
+
+.desTxt {
+  font-size: 14px;
+  margin-top: 5px;
+  @include line-clamp-2();
+}
+
+.detailBtn {
+  cursor: pointer;
+  display: flex;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 5px;
+  padding: 5px 5px 5px 0;
+  color: var(--blue-4);
+  gap: 8px;
+  p {
+    font-size: 14px;
+  }
+  svg {
+    width: 16px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .title {
+    font-size: 22px;
+  }
+  .desTxt {
+    margin: 10px 0 5px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .title {
+    margin-top: 15px;
+    font-size: 24px;
+  }
+  .desTxt {
+    margin-top: 15px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .title {
+    font-size: 27px;
+  }
+  .img {
+    height: 320px;
+  }
+}

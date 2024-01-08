@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_service_partners",
+  "info": {
+    "displayName": "Partner"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

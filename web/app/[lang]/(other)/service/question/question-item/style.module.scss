@@ -1,0 +1,31 @@
+.btn {
+  border-radius: 6px;
+  border: 1px solid var(--blue-3);
+  color: var(--text-gray-7);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 15px 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  svg {
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+  }
+}
+
+.answer {
+  color: var(--blue-6);
+  padding: 10px 5px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.selected {
+  svg {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}

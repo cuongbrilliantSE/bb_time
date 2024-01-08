@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_introduce_attributes",
+  "info": {
+    "displayName": "Attribute",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "count": {
+      "type": "integer",
+      "required": true
+    },
+    "unit": {
+      "type": "string"
+    },
+    "character": {
+      "type": "string"
+    }
+  }
+}

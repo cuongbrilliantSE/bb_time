@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "products": "Sản phẩm",
+    "services": "Dịch vụ",
+    "news": "Tin tức",
+    "introduce": "Giới thiệu",
+    "contact": "Liên hệ"
+  },
+  "home": {
+    "domain": "Lĩnh vực của",
+    "ours": "chúng tôi",
+    "view_detail": "Xem chi tiết"
+  },
+  "footer": {
+    "products": "Sản phẩm",
+    "news": "Tin tức",
+    "contact": "Liên hệ",
+    "sns": "Mạng xã hội"
+  },
+  "product": {
+    "product": "Sản phẩm của",
+    "ours": "chúng tôi",
+    "info": "Thông tin chung",
+    "specifications": "Thông số sản phẩm",
+    "galleries": "Hình ảnh & video",
+    "model": "MODEL",
+    "manufacturer": "Hãng sản xuất",
+    "origin": "Xuất xứ",
+    "des": "Mô tả sản phẩm",
+    "technical_feature": "Tính năng kỹ thuật",
+    "technical_specifications": "Thông số kỹ thuật",
+    "video_guide": "Video hướng dẫn",
+    "download_docs": "Download tài liệu",
+    "download": "Tải về",
+    "posts_related": "Bài viết liên quan",
+    "view_detail": "Xem chi tiết"
+  },
+  "connect": {
+    "connect": "Kết nối với BBTIME",
+    "email_placeholder": "Email hoặc Số điện thoại",
+    "send_info": "Gửi thông tin"
+  },
+  "service": {
+    "service": "Dịch vụ",
+    "ours": "của chúng tôi",
+    "view_detail": "Xem chi tiết",
+    "commit": "Cam kết",
+    "quality": "chất lượng dịch vụ",
+    "customer_reply": "Khách hàng nói về dịch vụ",
+    "question": "Câu hỏi thường gặp",
+    "question_des": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+  },
+  "post": {
+    "news": "Tin tức của ",
+    "ours": "chúng tôi",
+    "view_detail": "Xem chi tiết",
+    "min_to_read": "min. to read",
+    "category": "Danh mục",
+    "image": "Ảnh",
+    "tags": "Tìm kiếm tags",
+    "prev": "Prev",
+    "next": "Next",
+    "summary": "Tóm tắt nội dung"
+  },
+  "introduce": {
+    "an": "an",
+    "introduce": "Giới thiệu"
+  },
+  "contact": {
+    "contact_us": "Liên hệ",
+    "us": "chúng tôi",
+    "name": "Họ và tên",
+    "email": "Email",
+    "phone_number": "Số điện thoại",
+    "content": "Nội dung",
+    "follow": "Follow on",
+    "send": "Gửi thông tin"
+  }
+}

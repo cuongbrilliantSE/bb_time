@@ -1,0 +1,75 @@
+.wp {
+  margin-top: 30px;
+}
+
+.txt {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+
+  p {
+    color: var(--text-gray-2);
+    font-size: 20px;
+  }
+}
+
+.cateWp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--blue-2);
+}
+
+.cateTitle {
+  color: var(--text-gray-7);
+  font-size: 14px;
+}
+
+.cateCount {
+  color: var(--text-gray-7);
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp {
+    flex-basis: 50%;
+    max-width: 50%;
+    order: 1;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .wp {
+    flex-basis: initial;
+    max-width: 100%;
+    order: unset;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+}
+@media only screen and (min-width: 1440px) {
+  .txt {
+    margin-bottom: 20px;
+  }
+  .cateWp {
+    padding: 10px 0;
+  }
+  .cateTitle {
+    font-size: 15px;
+  }
+
+  .cateCount {
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .txt {
+    font-size: 21px;
+  }
+}

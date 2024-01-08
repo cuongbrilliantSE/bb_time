@@ -1,0 +1,170 @@
+@import "../../../../assets/styles/variables";
+
+/**********
+ * BANNER *
+ **********/
+.banner {
+  margin-top: 72px;
+  height: 200px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .banner {
+    height: 400px;
+  }
+}
+
+/**************
+ * END BANNER *
+ **************/
+
+/*******
+ * TAB *
+ *******/
+.secTab {
+  display: flex;
+  justify-content: center;
+  background-color: var(--blue-1);
+  // gap: 40px;
+}
+.tabBtn {
+  display: inline-block;
+  font-size: 16px;
+  color: var(--text-gray-2);
+  cursor: pointer;
+  padding: 8px 8px 11px 8px;
+  text-align: center;
+}
+
+.tabSelected {
+  font-weight: 600;
+  color: var(--blue-4);
+}
+
+@media only screen and (min-width: 768px) {
+  .secTab {
+    gap: 50px;
+  }
+  .sticky {
+    position: fixed;
+    top: 71px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .secTab {
+    gap: 100px;
+  }
+  .sticky {
+    top: 99px;
+  }
+}
+
+/***********
+ * END TAB *
+ ***********/
+
+/********
+ * INFO *
+ ********/
+.infoWp {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 5px;
+}
+.gallery {
+  margin: -5px -5px 0 -5px;
+}
+.in4Fullname {
+  color: var(--blue-4);
+  font-size: 28px;
+  font-weight: 600;
+}
+.in4ShortName {
+  color: var(--blue-4);
+  font-size: 28px;
+  font-weight: 300;
+}
+.in4Model {
+  margin-top: 10px;
+  color: var(--text-gray-10);
+  font-size: 16px;
+  span {
+    font-weight: 600;
+    color: var(--text-gray-5);
+  }
+}
+.in4Des {
+  margin-top: 5px;
+  color: var(--text-gray-10);
+  font-size: 16px;
+  text-align: justify;
+}
+
+@media only screen and (min-width: 768px) {
+  .infoWp {
+    margin-top: 30px;
+    flex-direction: row;
+    & > div {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+  .gallery {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .in4ShortName {
+    margin-bottom: 30px;
+  }
+  .infoWp {
+    margin: 50px auto;
+    gap: 50px;
+    padding: 0 20px;
+  }
+  .in4Fullname {
+    font-size: 36px;
+  }
+  .in4ShortName {
+    font-size: 36px;
+  }
+  .in4Model {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  .in4Des {
+    line-height: 32px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .infoWp {
+    margin-top: 100px;
+    gap: 85px;
+  }
+  .in4Model {
+    margin-top: 30px;
+  }
+  .in4Des {
+    line-height: 35px;
+  }
+  .in4Fullname {
+    line-height: 55px;
+  }
+  .in4ShortName {
+    line-height: 55px;
+    margin-bottom: 60px;
+  }
+}
+/************
+ * END INFO *
+ ************/

@@ -1,0 +1,143 @@
+/**********
+ * HEADER *
+ **********/
+.title {
+  font-size: 24px;
+  color: var(--black);
+  text-align: center;
+  margin: 10px 0;
+  b {
+    font-weight: 600;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .title {
+    flex-basis: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .title {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .title {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .title {
+    font-size: 36px;
+    margin-bottom: 18px;
+  }
+}
+/**************
+ * END HEADER *
+ **************/
+
+/**********
+ * AUTHOR *
+ **********/
+.des {
+  display: flex;
+  gap: 5px;
+}
+.author {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.authorAvatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.authorName {
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+
+.divider {
+  width: 1px;
+  background-color: var(--text-gray-10);
+  margin: 3px 0;
+}
+.updatedAt {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 1920px) {
+  .des {
+    gap: 10px;
+  }
+}
+/**************
+ * END AUTHOR *
+ **************/
+
+/*********
+ * THUMB *
+ *********/
+.thumb {
+  width: 100%;
+  height: 200px;
+  margin: 20px 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .thumb {
+    margin: 25px 0;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .thumb {
+    margin: 30px 0;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .thumb {
+    margin: 35px 0 43px;
+    height: 430px;
+  }
+}
+/*************
+ * END THUMB *
+ *************/
+
+/***********
+ * CONTENT *
+ ***********/
+
+.contents {
+  overflow: hidden;
+  p {
+    text-align: justify;
+  }
+}
+/***************
+ * END CONTENT *
+ ***************/

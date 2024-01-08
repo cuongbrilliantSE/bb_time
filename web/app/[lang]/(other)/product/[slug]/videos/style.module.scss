@@ -1,0 +1,110 @@
+.outer {
+  margin: 50px 5px 30px;
+}
+.wp {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.current {
+  border-radius: 30px;
+  overflow: hidden;
+  height: 250px;
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+.slider {
+  margin: 10px -5px 0;
+  :global .slick-slide {
+    & > div {
+      margin: 0 5px;
+    }
+  }
+}
+
+.item {
+  height: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp {
+    max-width: 700px;
+  }
+  .current {
+    height: 400px;
+  }
+  .item {
+    height: 130px;
+    border-radius: 15px;
+  }
+  .slider {
+    margin: 20px -20px 0;
+    :global .slick-slide {
+      & > div {
+        margin: 0 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .outer {
+    margin-bottom: 100px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .outer {
+    margin-bottom: 130px;
+  }
+  .wp {
+    max-width: 900px;
+  }
+  .current {
+    height: 500px;
+  }
+  .item {
+    height: 160px;
+    border-radius: 15px;
+  }
+  .slider {
+    margin: 20px -20px 0;
+    :global .slick-slide {
+      & > div {
+        margin: 0 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .outer {
+    margin-bottom: 150px;
+    margin-top: 130px;
+  }
+  .wp {
+    max-width: 1195px;
+  }
+  .current {
+    height: 640px;
+  }
+  .slider {
+    margin: 50px -30px 0;
+    :global .slick-slide {
+      & > div {
+        margin: 0 30px;
+      }
+    }
+  }
+  .item {
+    height: 200px;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "post_pages",
+  "info": {
+    "singularName": "post-page",
+    "pluralName": "post-pages",
+    "displayName": "PostPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

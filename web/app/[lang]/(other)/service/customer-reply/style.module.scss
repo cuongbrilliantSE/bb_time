@@ -1,0 +1,140 @@
+.wp {
+  padding-top: 30px;
+  background-color: var(--text-gray-6);
+}
+.txt {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.outer {
+  margin: 30px 0px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  padding: 20px;
+  &:nth-child(even) {
+    background-color: var(--blue-4);
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.name {
+  color: var(--text-gray-7);
+  font-weight: 600;
+  font-size: 20px;
+}
+.company {
+  color: var(--text-gray-7);
+}
+.reply {
+  font-style: italic;
+  color: var(--blue-6);
+  margin: 20px 0;
+}
+.comma {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.item {
+  padding: 20px;
+  &:nth-child(even) {
+    .name {
+      color: var(--white);
+    }
+    .company {
+      color: var(--white);
+    }
+    .reply {
+      color: var(--white);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .wp {
+    padding-top: 50px;
+  }
+  .outer {
+    flex-direction: row;
+    margin: 30px 0 50px;
+  }
+  .item {
+    flex-basis: 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+  .reply {
+    flex-grow: 1;
+    margin: 30px 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .txt {
+    text-align: left;
+  }
+  .wp {
+    padding: 50px 50px 0px;
+    background-color: var(--white);
+  }
+  .item {
+    padding: 30px 30px;
+    &:nth-child(odd) {
+      background-color: var(--text-gray-6);
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .txt {
+    font-size: 28px;
+  }
+  .wp {
+    padding: 100px 0px 0px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .item {
+    padding: 70px;
+  }
+  .outer {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .wp {
+    padding-top: 140px;
+  }
+  .txt {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .txt {
+    font-size: 35px;
+  }
+}

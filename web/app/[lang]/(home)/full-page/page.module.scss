@@ -1,0 +1,376 @@
+@import "../../../assets/styles/animation";
+
+@media only screen and (orientation: landscape) {
+  .fullPage {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  .section {
+    scroll-snap-align: start;
+    height: 100vh;
+  }
+}
+
+/**********
+ * BANNER *
+ **********/
+.secBanner {
+  height: 100vh;
+  position: relative;
+}
+.textBannerWp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgBanner {
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.textBanner {
+  display: inline-block;
+  font-size: 64px;
+  color: var(--white);
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  word-break: break-word;
+  max-width: 100vw;
+  overflow: hidden;
+}
+.btnMouseBanner {
+  bottom: 30px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  color: var(--white);
+}
+@media only screen and (min-width: 1024px) {
+  .textBanner {
+    white-space: nowrap;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    animation: typewriter 4s steps(var(--step-typing)) 1s 1 normal both,
+      blinkTextCursor 500ms steps(var(--step-typing)) infinite normal;
+  }
+}
+/**************
+ * END BANNER *
+ **************/
+
+/************
+ * CATEGORY *
+ ************/
+@keyframes scale-ping {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.82);
+  }
+}
+.secCategory {
+  display: flex;
+  position: relative;
+  margin: 90px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.txtCategory1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+.txtCategory2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.categories {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.categoriesMobile {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.categoriesSlider {
+  margin: 20px 0;
+  display: none;
+}
+.categoryHoverPing {
+}
+.categoryPing {
+  animation: scale-ping 1.5s ease 0s infinite;
+}
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  & > p {
+    font-size: 16px;
+    width: 100px;
+    text-align: center;
+  }
+  & > img {
+    transition: transform 0.5s;
+    width: 50px;
+    height: 50px;
+  }
+  &:hover {
+    .categoryHoverPing {
+      animation: scale-ping 1.5s ease 0s infinite;
+    }
+  }
+}
+.btnBlue {
+  display: none;
+}
+@media only screen and (orientation: landscape) {
+  .secCategory {
+    margin: 0;
+    padding-top: 50px;
+  }
+  .categoriesSlider {
+    display: block;
+    .categoryItem {
+      margin: 0 50px;
+    }
+  }
+  .categoriesMobile {
+    display: none;
+  }
+  .categories {
+    margin: 20px 0;
+    gap: 60px;
+  }
+  .horizontalDivider {
+    width: 40%;
+    margin: 30px auto;
+    div {
+      margin: 0 auto;
+      height: 1px;
+      background-color: var(--blue-3);
+    }
+  }
+  .btnBlue {
+    display: block;
+    color: var(--blue-4);
+    bottom: 20px;
+  }
+}
+
+@media only screen and (min-height: 768px) and (orientation: landscape) {
+  .txtCategory1 {
+    font-size: 36px;
+  }
+  .txtCategory2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .categoriesSlider {
+    .categoryItem {
+      margin: 0 150px;
+    }
+  }
+  .categoryItem {
+    gap: 10px;
+    & > p {
+      font-size: 24px;
+      width: 130px;
+    }
+    & > img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+@media only screen and (min-height: 1024px) and (orientation: landscape) {
+  .btnBlue {
+    bottom: 37px;
+  }
+}
+@media only screen and (min-width: 1920px) and (orientation: landscape) {
+  .categories {
+    gap: 150px;
+    margin: 30px 0;
+  }
+  .categoriesSlider {
+    margin: 30px 0;
+  }
+  .categoryItem {
+    gap: 10px;
+    & > p {
+      font-size: 24px;
+      width: 130px;
+    }
+    & > img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+
+/****************
+ * END CATEGORY *
+ ****************/
+
+/*************
+ * ADVANTAGE *
+ *************/
+.advSubject {
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.secAdvantage {
+  display: flex;
+  flex-direction: column;
+}
+.advImg {
+  height: 300px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.advIn4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+.advBtn {
+  margin-top: 20px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 5px;
+  gap: 10px;
+  padding: 7px 2px 7px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  p {
+    font-size: 12px;
+    color: var(--white);
+  }
+  img {
+    margin-bottom: 1px;
+  }
+}
+.advTitle {
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 400;
+  text-align: left;
+}
+.advDesc {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 400;
+}
+.btnMouseAdv {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  color: var(--white);
+}
+
+@media only screen and (min-width: 768px) {
+  .secAdvantage {
+    flex-direction: row;
+    &:nth-of-type(odd) {
+      .advImg {
+        order: 2;
+      }
+    }
+  }
+  .btnMouseAdv {
+    display: block;
+  }
+  .advImg {
+    flex-basis: 50%;
+    min-width: 50%;
+    height: 600px;
+  }
+  .advIn4 {
+    flex-basis: 50%;
+    min-width: 50%;
+    padding: 0 50px 50px;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .advImg {
+    height: 100vh;
+  }
+  .advIn4 {
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (min-height: 768px) and (orientation: landscape) {
+  .advDesc {
+    margin-top: 25px;
+  }
+  .advBtn {
+    margin-top: 70px;
+  }
+}
+@media only screen and (min-height: 1024px) and (orientation: landscape) {
+  .advIn4 {
+    justify-content: flex-start;
+  }
+  .advSubject {
+    margin-top: 170px;
+  }
+  .advTitle {
+    margin-top: 20px;
+  }
+  .advBtn {
+    margin-top: 120px;
+  }
+}
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+  .advTitle {
+    font-size: 42px;
+  }
+}
+@media only screen and (min-width: 1920px) and (orientation: landscape) {
+  .advIn4 {
+    padding: 70px 187px 187px 187px;
+  }
+}
+
+/*****************
+ * END ADVANTAGE *
+ *****************/

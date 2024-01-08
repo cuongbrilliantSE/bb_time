@@ -1,0 +1,168 @@
+/***********
+ * WRAPPER *
+ ***********/
+
+.mobile {
+  margin-top: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+
+.tabContent {
+  padding: 5px;
+}
+
+/***************
+ * END WRAPPER *
+ ***************/
+
+/*******
+ * TAB *
+ *******/
+.btn {
+  text-transform: uppercase;
+  background: var(--blue-1);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-gray-2);
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--blue-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    transition: transform 0.5s;
+  }
+}
+
+.selectBtn {
+  color: var(--blue-4);
+  svg {
+    transform: rotate(90deg);
+  }
+}
+/***********
+ * END TAB *
+ ***********/
+
+/****************
+ * TECH FEATURE *
+ ****************/
+.techFeature {
+  color: var(--text-gray-10);
+}
+
+/********************
+ * END TECH FEATURE *
+ ********************/
+
+/********
+ * SPEC *
+ ********/
+.specMb {
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--blue-3);
+  }
+
+  padding: 5px 0;
+}
+.specTitle {
+  font-weight: 600;
+  color: var(--text-gray-5);
+}
+.specDes {
+  font-weight: 600;
+  color: var(--text-gray-10);
+  white-space: pre;
+}
+/************
+ * END SPEC *
+ ************/
+
+/*********
+ * GUIDE *
+ *********/
+.guideWp {
+  margin-bottom: 20px;
+}
+.guideIframe {
+  border-radius: 15px;
+  overflow: hidden;
+  height: 250px;
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.guideTxt {
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-gray-2);
+}
+/*************
+ * END GUIDE *
+ *************/
+
+/********
+ * DOCS *
+ ********/
+.doc {
+  display: flex;
+  padding: 5px 0;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--blue-3);
+  }
+  gap: 10px;
+  align-items: center;
+}
+
+.docSvg {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-product);
+  img {
+    width: 30px;
+    margin: 9px;
+    height: 30px;
+    object-fit: cover;
+  }
+}
+
+.docTxt {
+  text-transform: capitalize;
+  font-weight: 600;
+  color: var(--text-gray-5);
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.docDes {
+  color: var(--text-gray-10);
+}
+
+.btnDoc {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  background-color: var(--blue-4);
+  border-radius: 10px;
+  color: var(--white);
+  border: none;
+  img {
+    width: 22px;
+    vertical-align: -4px;
+  }
+  padding: 6px 15px 8px;
+  p {
+    display: inline-block;
+    margin-left: 4px;
+  }
+}
+
+/************
+ * END DOCS *
+ ************/

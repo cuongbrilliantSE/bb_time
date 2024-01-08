@@ -1,0 +1,113 @@
+/*************
+ * GALLERY 2 *
+ *************/
+
+.wp {
+  padding: 5px;
+}
+
+.txt {
+  color: var(--text-gray-5);
+  font-weight: 600;
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.img {
+  height: 300px;
+  border: 1px solid var(--text-gray-8);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+  }
+}
+
+.title {
+  font-weight: 600;
+  color: var(--text-gray-7);
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.des {
+  color: var(--text-gray-10);
+  line-height: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp {
+    padding: 15px 10px;
+  }
+  .slider {
+    margin: 0 -20px;
+    :global .slick-slide {
+      & > div {
+        margin: 0 20px;
+      }
+    }
+  }
+  .img {
+    height: 250px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .wp {
+    padding: 25px 15px;
+  }
+  .img {
+    height: 200px;
+  }
+  .txt {
+    font-size: 32px;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .des {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .img {
+    &:hover {
+      box-shadow: 0px 10px 30px 0px rgba(167, 167, 167, 0.25);
+    }
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .title {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .txt {
+    margin-bottom: 70px;
+  }
+
+  .img {
+    position: relative;
+    height: 300px;
+    img {
+      position: absolute;
+      left: 10%;
+      top: 10%;
+      width: 80%;
+      height: 80%;
+      object-fit: scale-down;
+    }
+  }
+}
+/*****************
+ * END GALLERY 2 *
+ *****************/

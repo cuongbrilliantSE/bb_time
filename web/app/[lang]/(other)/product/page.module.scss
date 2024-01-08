@@ -1,0 +1,259 @@
+@import "../../../assets/styles/variables";
+
+/**********
+ * BANNER *
+ **********/
+.banner {
+  margin-top: 72px;
+  height: 300px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-height: 768px) {
+  .banner {
+    height: 400px;
+  }
+}
+
+/**************
+ * END BANNER *
+ **************/
+
+/*********
+ * INTRO *
+ *********/
+
+.productBreadcrumb {
+  margin: 10px 0;
+}
+.txt1 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+}
+.txt2 {
+  text-align: center;
+  font-size: 28px;
+}
+.pageDes {
+  color: var(--text-gray-10);
+  font-size: 20px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 5px;
+  max-width: 750px;
+}
+@media only screen and (min-width: 1024px) {
+  .productBreadcrumb {
+    margin: 24px 0;
+  }
+  .txt1 {
+    font-size: 36px;
+  }
+  .txt2 {
+    font-size: 36px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .pageDes {
+    line-height: 35px;
+  }
+}
+/*************
+ * END INTRO *
+ *************/
+
+/****************
+ * LIST PRODUCT *
+ ****************/
+.secPrd {
+  padding: 0 5px 20px 5px;
+}
+.catTitle {
+  color: var(--blue-4);
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  margin: 30px 0 20px 0;
+}
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.prdWp {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+.prdImg {
+  border-radius: 5px;
+  flex-basis: 120px;
+  width: 120px;
+  min-width: 120px;
+  height: 150px;
+  position: relative;
+  img {
+    &:first-child {
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
+    }
+  }
+}
+.prdImg2 {
+  position: absolute;
+  top: 10%;
+
+  left: 10%;
+
+  width: 80%;
+  height: 80%;
+  object-fit: scale-down;
+}
+.prdTitle {
+  font-weight: 500;
+  color: var(--text-gray-2);
+  font-size: 20px;
+}
+.prdDes {
+  color: var(--text-gray-10);
+  margin: 10px 0 15px 0;
+  @include line-clamp-2;
+  font-size: 16px;
+}
+.detailBtn {
+  cursor: pointer;
+  display: flex;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 5px 5px 0;
+  color: var(--blue-4);
+  gap: 8px;
+  p {
+    font-size: 16px;
+  }
+  svg {
+    margin-bottom: -3px;
+  }
+}
+.divider {
+  border-bottom: 1px solid var(--blue-3);
+}
+@media only screen and (min-width: 768px) {
+  .secPrd {
+    padding: 0 10px 60px 10px;
+  }
+  .catTitle {
+    text-align: left;
+    // font-size: 32px;
+    margin-top: 50px;
+    text-transform: uppercase;
+  }
+  .products {
+    flex-direction: row;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-top: -20px;
+    // width: calc(100% + 20px);
+  }
+  .prdWp {
+    padding: 20px 0 0 20px;
+    flex-basis: 50%;
+    max-width: 50%;
+    // border-bottom: 1px solid var(--blue-3);
+  }
+}
+
+.prdWithBorder {
+}
+@media only screen and (min-width: 1024px) {
+  .prdTitle {
+    font-size: 24px;
+  }
+  .catTitle {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 32px;
+  }
+
+  .products {
+    margin-left: -50px;
+    margin-top: -50px;
+    // width: calc(100% + 50px);
+  }
+  .prdImg {
+    flex-basis: 170px;
+    min-width: 170px;
+    height: 200px;
+  }
+  .prdWp {
+    gap: 50px;
+    padding: 70px 0 50px 50px;
+    &.prdWithBorder {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+        height: 1px;
+        right: 0px;
+        background: var(--blue-3);
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1080px) {
+  .products {
+    margin-left: -100px;
+    // width: calc(100% + 100px);
+  }
+  .prdDes {
+    line-height: 32px;
+  }
+  .prdWp {
+    padding: 70px 0 50px 100px;
+    &.prdWithBorder {
+      &::after {
+        left: 100px;
+      }
+    }
+  }
+  .detailBtn {
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .detailBtn {
+    margin-top: 10px;
+    gap: 30px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .prdDes {
+    max-width: 350px;
+    line-height: 35px;
+  }
+  .products {
+    margin-left: -145px;
+  }
+  .prdWp {
+    padding-left: 145px;
+    padding-bottom: 70px;
+    &.prdWithBorder {
+      &::after {
+        left: 145px;
+      }
+    }
+  }
+}
+/********************
+ * END LIST PRODUCT *
+ ********************/
