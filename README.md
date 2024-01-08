@@ -1,11 +1,31 @@
-# 🚀 Getting started with Strapi
-
-```angular2html
-  
-```
+# 🚀 Getting started
 
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+## Project Overview
+
+The project is divided into two main parts:
+
+1. **Frontend Web Application:** This part is responsible for the user interface and interactions.
+
+2. **Backend CMS (Content Management System):** This part manages the content, data, and overall functionality of the application.
+
+3. **Dump data** in file pg-dump-bb_time-202401042031
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+- Nvm 1.1.12
+- Node.js version 20
+- PostgreSQL version 16.1
+- Add psql to environment variables
+
+
+### Create .env file in cms
+Copy .env.example to .env and change environment variables
+
+### Dump data
+psql -U your_username -d your_database_name -a -f path/to/your/file.sql
+
 
 ### `develop`
 
@@ -41,22 +61,4 @@ yarn build
 
 Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
 
-## 📚 Learn more
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
