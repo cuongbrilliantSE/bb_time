@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  strapi:
+    image: strapi/strapi
+    container_name: my_strapi_app
+    build:
+      context: ./cms
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "1337:1337"
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: bb_time
+      DATABASE_USERNAME: admin
+      DATABASE_PASSWORD: admin
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: my_postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: bb_time
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - ./pg-dump-bb_time-202401042031.sql:/docker-entrypoint-initdb.d/dummy_dump.sql
