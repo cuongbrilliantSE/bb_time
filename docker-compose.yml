@@ -6,27 +6,43 @@ services:
     container_name: my_strapi_app
     build:
       context: ./cms
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
     restart: always
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: strapiDB
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      NODE_ENV: ${NODE_ENV}
     ports:
       - "1337:1337"
-    environment:
-      DATABASE_CLIENT: postgres
-      DATABASE_HOST: db
-      DATABASE_PORT: 5432
-      DATABASE_NAME: bb_time
-      DATABASE_USERNAME: admin
-      DATABASE_PASSWORD: admin
+    networks:
+      - strapi
     depends_on:
-      - db
+      - strapiDB
 
-  db:
+  strapiDB:
     image: postgres:latest
     container_name: my_postgres_db
     restart: always
+    env_file: .env
     environment:
-      POSTGRES_DB: bb_time
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
     volumes:
       - ./pg-dump-bb_time-202401042031.sql:/docker-entrypoint-initdb.d/dummy_dump.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - strapi
+
+networks:
+  strapi:
+    driver: bridge
