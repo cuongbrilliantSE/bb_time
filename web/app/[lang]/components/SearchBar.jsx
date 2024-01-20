@@ -7,20 +7,23 @@ export const SearchBar = ({ setResults }) => {
     const [input, setInput] = useState("");
 
     const fetchData = (value) => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then((response) => response.json())
-            .then((json) => {
-                const results = json.filter((user) => {
-                   return {
-                      result: value &&
-                       user &&
-                       user.name &&
-                       user.name.toLowerCase().includes(value)
-                   }
-                });
+        const apiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`;
+        const queryParams = {
+            locale: 'vi-VN',
+            _q: value
+        };
 
-                setResults(results);
-            });
+        const queryString = new URLSearchParams(queryParams).toString();
+        const fullUrl = `${apiUrl}?${queryString}`;
+
+        return fetch(fullUrl, {
+            cache: "no-store",
+        }).then((res) => res.json())
+        .then((json) => {
+            setResults(json.data);
+        });
+
+
     }
 
     const handleChange = (value) => {

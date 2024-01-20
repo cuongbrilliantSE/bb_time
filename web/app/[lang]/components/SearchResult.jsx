@@ -1,7 +1,8 @@
 import './SearchResult.css';
+import Link from "next/link";
 
 export const SearchResult = ({ result }) => {
-  return <div className="search-result">
-      {result.name}
-  </div>
+  return <Link className="search-result" href={`/product/${result.attributes.slug}`}>
+      {result.attributes.name}
+  </Link>
 }
