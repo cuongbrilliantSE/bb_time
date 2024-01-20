@@ -65,7 +65,7 @@ const PostRelated = ({ i18n, product }) => {
               {i.attributes.title}
             </p>
             <Link
-              href={`/product/${i.attributes.slug}`}
+              href={`/news/${i.attributes.slug}`}
               className={clsx(styles.btn, "animation")}
               data-animation="fade-in-up"
             >

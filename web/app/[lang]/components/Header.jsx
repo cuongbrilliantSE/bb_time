@@ -10,18 +10,20 @@ import Link from "next/link";
 import { useState } from "react";
 import ChangeLanguage from "./ChangeLanguage";
 import Search from "./Search";
+import {useRouter} from "next/navigation";
 
 const Header = ({ i18n, categories }) => {
   const [open, setOpen] = useState(false);
   const [menuLv1Open, setMenuLv1Open] = useState();
+  const router = useRouter();
 
   const navData = [
     {
       title: i18n.products,
       url: "/product",
-      child: categories.map((i) => ({
-        title: i.attributes.title,
-        child: i.attributes.products.data.map((prd) => ({
+      child: categories.map((item) => ({
+        title: item.attributes.title,
+        child: item.attributes.products.data.map((prd) => ({
           title: prd.attributes.full_name,
           url: `/product/${prd.attributes.slug}`,
           icon: getImgUrl(prd.attributes.thumb.data.attributes.url),
@@ -62,11 +64,11 @@ const Header = ({ i18n, categories }) => {
           <div className="nav-inner">
             <div className="nav-list-wp">
               <ul className="nav-list">
-                {navData.map((i, idx) => (
+                {navData.map((itemRoot, idx) => (
                   <li
                     key={idx}
                     className={clsx("nav-item", {
-                      "nav-item-open": menuLv1Open == i.title,
+                      "nav-item-open": menuLv1Open == itemRoot.title,
                     })}
                   >
                     <div className="nav-link">
@@ -75,15 +77,15 @@ const Header = ({ i18n, categories }) => {
                           setOpen(false);
                           setMenuLv1Open(undefined);
                         }}
-                        href={i.url || "#"}
+                        href={itemRoot.url || "#"}
                       >
-                        {i.title}{" "}
+                        {itemRoot.title}{" "}
                       </Link>
-                      {!!i?.child?.length && (
+                      {!!itemRoot?.child?.length && (
                         <div
                           className="nav-item-arrow"
                           onClick={() => {
-                            setMenuLv1Open(!!menuLv1Open ? undefined : i.title);
+                            setMenuLv1Open(!!menuLv1Open ? undefined : itemRoot.title);
                           }}
                         >
                           <img src={ChevronUpImg.src} alt="chevron-up" />
@@ -91,9 +93,9 @@ const Header = ({ i18n, categories }) => {
                       )}
                     </div>
 
-                    {!!i?.child?.length && (
+                    {!!itemRoot?.child?.length && (
                       <ul className={clsx("nav-list-2")}>
-                        {i.child.map((lv2, idx2) => (
+                        {itemRoot.child.map((lv2, idx2) => (
                           <li className="nav-item-2" key={idx2}>
                             <div className="nav-link-2">
                               {lv2?.url ? (
@@ -110,26 +112,27 @@ const Header = ({ i18n, categories }) => {
                                 lv2.title
                               )}
                               {!!lv2?.child?.length && (
-                                <img src={ChevronUpImg.src} alt="chevron-up" />
+                                <img className="img-chevron-up" src={ChevronUpImg.src} alt="chevron-up" />
                               )}
                             </div>
                             {!!lv2?.child?.length && (
                               <ul className="nav-list-3">
+                                <span className="title-category-prod">{lv2.title}</span>
+                                <div className="list-product-3">
                                 {lv2.child.map((lv3, idx3) => (
-                                  <li key={idx3} className="nav-item-3">
-                                    <Link
-                                      onClick={(e) => {
-                                        setOpen(false);
-                                        setMenuLv1Open(undefined);
-                                      }}
-                                      href={lv3.url || "#"}
-                                      className="nav-link-3"
-                                    >
-                                      <img src={lv3.icon} />
-                                      {lv3.title}
-                                    </Link>
-                                  </li>
+                                    <div
+                                        className="item-content"
+                                        key={`item-${idx3}`}
+                                        onClick={(e) => {
+                                          setOpen(false);
+                                          setMenuLv1Open(undefined);
+                                          router.push(lv3.url);
+                                        }}>
+                                      <img className="image-prod" src={lv3.icon} />
+                                      <span className="title-prod">{lv3.title}</span>
+                                    </div>
                                 ))}
+                                </div>
                               </ul>
                             )}
                           </li>

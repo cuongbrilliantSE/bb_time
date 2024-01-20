@@ -15,7 +15,7 @@ const ListVideos = ({ i18n, product }) => {
       <div className={styles.outer}>
         <div className={styles.wp}>
           <div className={clsx(styles.current, "animation")}>
-            <iframe src={product.videos[selected].link} />
+            <iframe src={product.videos[selected]?.link} />
           </div>
           <Slider
             dots={false}
