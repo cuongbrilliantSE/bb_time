@@ -259,8 +259,11 @@ header {
     position: absolute;
     transition: max-height 0.5s;
     background-color: var(--white);
-    left: 0;
-    right: 0;
+    width: 1440px;
+    left: 50%;
+    right: 50%;
+    top: 310px;
+    transform: translate(-50%, -50%);
   }
   .nav-item-2 {
     width: 180px;
@@ -397,7 +400,7 @@ header {
     gap: 50px;
   }
   .nav-list-2 {
-    right: 200px;
+    right: 0;
   }
 }
 /**************
