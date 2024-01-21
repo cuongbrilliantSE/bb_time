@@ -124,6 +124,7 @@ header {
 
 .nav-list {
   list-style-type: none;
+  position: relative;
 }
 
 .nav-link {
@@ -137,6 +138,15 @@ header {
     padding: 10px 0;
   }
 }
+.container-nav-2 {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background: #fff;
+}
+
 .nav-item-arrow {
   width: 30px;
   height: 30px;
@@ -217,6 +227,7 @@ header {
     margin-top: 0;
     gap: 10px;
     align-items: center;
+    position: relative;
   }
   .nav-link {
     height: 100px;
@@ -238,7 +249,7 @@ header {
         }
       }
       .nav-list-2 {
-        height: 75vh;
+        height: 32vh;
         max-height: initial;
         border-left: 1px solid var(--blue-7);
         box-shadow: 1px 1px 1px 0px var(--blue-7);
@@ -256,21 +267,18 @@ header {
     margin-bottom: -2px;
   }
   .nav-list-2 {
-    position: absolute;
+    position: relative;
     transition: max-height 0.5s;
     background-color: var(--white);
     width: 1440px;
-    left: 50%;
-    right: 50%;
-    top: 310px;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
   }
   @media only screen and (min-width: 1920px) {
     .nav-list-2 {
       width: 1440px;
     }
   }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1024px) and (max-width: 1919px) {
     .nav-list-2 {
       width: 1024px;
     }

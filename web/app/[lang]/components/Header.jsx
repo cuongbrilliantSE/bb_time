@@ -97,6 +97,7 @@ const Header = ({ i18n, categories }) => {
                       )}
                     </div>
 
+                    <div className="container-nav-2">
                     {!!itemRoot?.child?.length && (
                       <ul className={clsx("nav-list-2")}>
                         {itemRoot.child.map((lv2, idx2) => (
@@ -143,6 +144,7 @@ const Header = ({ i18n, categories }) => {
                         ))}
                       </ul>
                     )}
+                    </div>
                   </li>
                 ))}
               </ul>
