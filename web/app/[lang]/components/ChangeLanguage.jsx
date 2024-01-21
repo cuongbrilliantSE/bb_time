@@ -1,5 +1,6 @@
 import VnImg from "@assets/flags/vi.svg";
 import EnImg from "@assets/flags/en.svg";
+import ChevronDownImg from "@assets/icons/chevron_down.svg";
 import {Fragment, useEffect, useState} from "react";
 import {usePathname, useRouter} from "next/navigation";
 
@@ -27,13 +28,14 @@ const ChangeLanguage = () => {
 
   return (
     <Fragment>
-      <div className="btn-change-lang">
-        <div className="btn-change-lang-flag" onClick={() => {
-          setIsVN(!isVn);
-          changeLanguage();
-        }}>
+      <div className="btn-change-lang" onClick={() => {
+        setIsVN(!isVn);
+        changeLanguage();
+      }}>
+        <div className="btn-change-lang-flag">
           <img src={isVn ? VnImg.src : EnImg.src} alt="" />
         </div>
+        <img src={ChevronDownImg.src} alt="chevron-down" />
       </div>
     </Fragment>
   );

@@ -35,8 +35,6 @@ export default async function Home({ params }) {
     },
   ]);
 
-  // console.log(JSON.stringify(data));
-  // console.log(JSON.stringify(categories));
   return (
     <main>
       <section className={clsx(styles.banner)}>

@@ -10,12 +10,13 @@ import Link from "next/link";
 import { useState } from "react";
 import ChangeLanguage from "./ChangeLanguage";
 import Search from "./Search";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 
 const Header = ({ i18n, categories }) => {
   const [open, setOpen] = useState(false);
   const [menuLv1Open, setMenuLv1Open] = useState();
   const router = useRouter();
+  const pathName = usePathname();
 
   const navData = [
     {
@@ -73,6 +74,9 @@ const Header = ({ i18n, categories }) => {
                   >
                     <div className="nav-link">
                       <Link
+                        className={clsx({
+                          "nav-link-active": pathName.includes(itemRoot.url)
+                        })}
                         onClick={(e) => {
                           setOpen(false);
                           setMenuLv1Open(undefined);

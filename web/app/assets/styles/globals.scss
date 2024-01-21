@@ -9,7 +9,7 @@
   --text-gray-7: #050505;
   --text-gray-5: #333333;
   --text-gray-2: #666;
-  --text-gray-10: #999;
+  --text-gray-10: #5E5E5E;
   --text-gray-11: #c4c4c4;
   --text-gray-8: #eee;
   --text-gray-6: #fafafa;
@@ -245,6 +245,11 @@ header {
       }
     }
   }
+  .nav-link-active {
+    color: #126cab!important;
+    border-bottom: 2px solid #9EDFFF;
+  }
+
   .nav-item-arrow {
     width: 25px;
     margin-bottom: -2px;
