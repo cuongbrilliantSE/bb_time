@@ -265,6 +265,11 @@ header {
     top: 310px;
     transform: translate(-50%, -50%);
   }
+  @media only screen and (min-width: 1920px) {
+    .nav-list-2 {
+      width: 1440px;
+    }
+  }
   @media only screen and (min-width: 1024px) {
     .nav-list-2 {
       width: 1024px;
