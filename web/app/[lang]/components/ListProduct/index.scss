@@ -1,0 +1,35 @@
+@import "../../../assets/styles/variables";
+
+.container-category-product {
+  width: 100vw;
+  padding: 8px 0;
+  background-color: var(--blue-1);
+
+  .list-content {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+  @media only screen and (min-width: 1024px) and (max-width: 1919px) {
+    .list-content {
+      width: 1024px;
+    }
+  }
+}
+
+.fixed-category {
+  position: fixed;
+  position: -webkit-sticky;
+  top: 100px;
+  z-index: 99999;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.category-active {
+  font-weight: 600;
+  color: var(--blue-4);
+}
