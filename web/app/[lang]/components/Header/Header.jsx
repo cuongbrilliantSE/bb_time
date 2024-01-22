@@ -8,8 +8,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import ChangeLanguage from "./ChangeLanguage";
-import Search from "./Search";
+import ChangeLanguage from "../ChangeLanguage";
+import Search from "../Search/Search";
 import {usePathname, useRouter} from "next/navigation";
 
 const Header = ({ i18n, categories }) => {
