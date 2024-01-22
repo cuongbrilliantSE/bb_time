@@ -9,7 +9,7 @@ export const ProductCategory = (props) => {
     const element = document.getElementById(id);
     const topY = element.offsetTop;
     window.scroll({
-      top: topY - 160,
+      top: topY - 180,
       behavior: "smooth"
     });
   }
