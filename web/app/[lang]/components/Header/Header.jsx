@@ -11,6 +11,7 @@ import { useState } from "react";
 import ChangeLanguage from "../ChangeLanguage";
 import Search from "../Search/Search";
 import {usePathname, useRouter} from "next/navigation";
+import "./Header.scss";
 
 const Header = ({ i18n, categories }) => {
   const [open, setOpen] = useState(false);
