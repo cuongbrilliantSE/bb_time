@@ -70,7 +70,7 @@ const Header = ({ i18n, categories }) => {
                   <li
                     key={idx}
                     className={clsx("nav-item", {
-                      "nav-item-open": menuLv1Open == itemRoot.title,
+                      "nav-item-open": menuLv1Open === itemRoot.title,
                     })}
                   >
                     <div className="nav-link">
