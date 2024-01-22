@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "../assets/styles/globals.scss";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import { getDictionary } from "../../get-dictionary";
 import { i18n } from "../../i18n-config";
 import Script from "next/script";

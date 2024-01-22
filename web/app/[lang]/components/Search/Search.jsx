@@ -2,8 +2,8 @@ import SearchImg from "@assets/icons/search.svg";
 import { Fragment } from "react";
 import React, { useState } from 'react';
 import Popup from "./Popup";
-import {SearchBar} from "@/app/[lang]/components/SearchBar";
-import {SearchResultsList} from "@/app/[lang]/components/SearchResultsList";
+import {SearchBar} from "@/app/[lang]/components/Search/SearchBar";
+import {SearchResultsList} from "@/app/[lang]/components/Search/SearchResultsList";
 
 const Search = () => {
     const [isOpen, setIsOpen] = useState(false);
