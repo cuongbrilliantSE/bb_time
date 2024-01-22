@@ -230,6 +230,28 @@ header {
       }
     }
   }
+
+  .nav-item-2.active {
+    background-color: var(--blue-1);
+    border-bottom: 1px solid var(--blue-7);
+
+    .img-chevron-up {
+      display: block;
+    }
+
+    .nav-list-3 {
+      display: initial;
+      height: 197px;
+    }
+
+    .list-product-3 {
+      display: flex;
+      height: 197px;
+      overflow-x: hidden;
+    }
+
+  }
+
   .nav-link-2 {
     font-size: 14px;
     color: var(--black);

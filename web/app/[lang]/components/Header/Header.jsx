@@ -18,6 +18,7 @@ const Header = ({ i18n, categories }) => {
   const [menuLv1Open, setMenuLv1Open] = useState();
   const router = useRouter();
   const pathName = usePathname();
+  const [activeNav2Index, setActiveNav2Index ] = useState(0);
 
   const navData = [
     {
@@ -102,7 +103,11 @@ const Header = ({ i18n, categories }) => {
                     {!!itemRoot?.child?.length && (
                       <ul className={clsx("nav-list-2")}>
                         {itemRoot.child.map((lv2, idx2) => (
-                          <li className="nav-item-2" key={idx2}>
+                          <li className={clsx("nav-item-2", {
+                                "active": activeNav2Index === idx2
+                              })}
+                              onMouseEnter={() => {setActiveNav2Index(idx2)}}
+                              key={idx2}>
                             <div className="nav-link-2">
                               {lv2?.url ? (
                                 <Link
