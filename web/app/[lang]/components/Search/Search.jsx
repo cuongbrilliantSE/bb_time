@@ -1,6 +1,6 @@
 import SearchImg from "@assets/icons/search.svg";
 import CloseImg from "@assets/icons/red_x.svg";
-import { Fragment } from "react";
+import { Fragment, useRef, useEffect } from "react";
 import React, { useState } from 'react';
 import {SearchBar} from "@/app/[lang]/components/Search/SearchBar";
 import {SearchResultsList} from "@/app/[lang]/components/Search/SearchResultsList";
@@ -15,10 +15,28 @@ const Search = () => {
         setIsOpen(!isOpen);
     }
     const [results, setResults] = useState([]);
+    const searchRef = useRef(null);
+
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+                // Click occurred outside the search component, close the search
+                setIsOpen(false);
+            }
+        };
+
+        // Add event listener to handle outside clicks
+        document.addEventListener("mousedown", handleOutsideClick);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, []);
 
   return (
     <Fragment>
-      <div className="header-search">
+      <div className="header-search" ref={searchRef}>
         <img src={searchImgSrc} alt="search" onClick={togglePopup} />
           {isOpen && <SearchSpace
               content={<>
