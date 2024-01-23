@@ -5,7 +5,8 @@ const SearchSpace = props => {
         left: 0,
         right: 0,
         width: '100vw',
-        background: '#fff'
+        background: '#fff',
+        'border-top': '1px solid #e7ebf0'
     };
 
     const boxStyle = {
