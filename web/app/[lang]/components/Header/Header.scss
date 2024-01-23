@@ -167,7 +167,7 @@ header {
         }
       }
       .nav-list-2 {
-        height: 32vh;
+        height: 60vh;
         max-height: initial;
         //border-left: 1px solid var(--blue-7);
         //box-shadow: 1px 1px 1px 0px var(--blue-7);
@@ -263,6 +263,16 @@ header {
       width: 10px;
       transform: rotate(90deg);
     }
+  }
+
+  .nav-link-2::after {
+    content: "";
+    width: 1px;
+    height: 550px;
+    background-color: #e7ebf0;
+    position: absolute;
+    left: 180px;
+    top: 0;
   }
 
   .nav-list-3 {
