@@ -10,7 +10,6 @@ const Tab = ({ i18n }) => {
 
   const toggleVisible = () => {
     if (document.documentElement.scrollTop > 380) {
-      // console.log("aaa", screen.width);
       setSticky(true);
     } else {
       setSticky(false);
