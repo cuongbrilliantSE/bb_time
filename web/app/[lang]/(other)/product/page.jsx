@@ -58,7 +58,7 @@ export default async function Home({ params }) {
       </section>
       <section className={clsx("container", styles.secPrd)}>
         {categories.data.map((cat, index) => (
-          <div key={cat.id} id={`category-product-${index}`}>
+          <div key={cat.id} id={`category-product-${index}`} className="category">
             <p
               className={clsx(styles.catTitle, "animation")}
               data-animation="fade-in-up"
