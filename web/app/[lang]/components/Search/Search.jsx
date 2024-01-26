@@ -15,6 +15,7 @@ const Search = () => {
         setIsOpen(!isOpen);
     }
     const [results, setResults] = useState([]);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const searchRef = useRef(null);
 
     useEffect(() => {
@@ -34,17 +35,41 @@ const Search = () => {
         };
     }, []);
 
+
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener when the component is unmounted
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
   return (
     <Fragment>
       <div className="header-search" ref={searchRef}>
-        <img src={searchImgSrc} alt="search" onClick={togglePopup} />
-          {isOpen && <SearchSpace
-              content={<>
-                  <SearchBar setResults={setResults}/>
-                  <SearchResultsList results={results}/>
-              </>}
-          />}
+          {screenWidth >= 1024 && (
+              <img src={searchImgSrc} alt="search" onClick={togglePopup} />
+          )}
+          {isOpen && screenWidth > 1024 && (
+              <SearchSpace
+                  content={<>
+                          <SearchBar setResults={setResults} />
+                          <SearchResultsList results={results} />
+                      </>}
+              />
+          )}
 
+          {screenWidth <= 1024 && (
+              <>
+                  <SearchBar setResults={setResults} />
+                  <SearchResultsList results={results} />
+              </>
+          )}
       </div>
     </Fragment>
   );
