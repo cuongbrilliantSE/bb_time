@@ -14,7 +14,6 @@ export const ProductCategory = (props) => {
     });
   }
   const [fixCategory, setFixCategory] = useState(false);
-  const [categoryActive, setCategoryActive] = useState(null);
   const [activeCategory, setActiveCategory] = useState(null);
 
   const toggleVisible = () => {
@@ -52,9 +51,7 @@ export const ProductCategory = (props) => {
         }
       }
 
-      // Set active category
       setActiveCategory(foundCategory);
-      console.log(foundCategory, '================', activeCategory)
     };
 
     // Thêm sự kiện cuộn

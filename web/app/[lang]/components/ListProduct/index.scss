@@ -27,6 +27,7 @@
 
 .fixed-category {
   position: fixed;
+  -webkit-transform: translateZ(0);
   position: -webkit-sticky;
   top: 100px;
   z-index: 9;
