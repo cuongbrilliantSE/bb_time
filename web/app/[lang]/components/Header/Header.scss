@@ -167,7 +167,7 @@ header {
         }
       }
       .nav-list-2 {
-        height: 60vh;
+        height: 580px;
         max-height: initial;
         //border-left: 1px solid var(--blue-7);
         //box-shadow: 1px 1px 1px 0px var(--blue-7);
@@ -225,7 +225,7 @@ header {
 
       .list-product-3 {
         display: flex;
-        height: 197px;
+        max-height: 560px;
         overflow-x: hidden;
       }
     }
@@ -246,7 +246,7 @@ header {
 
     .list-product-3 {
       display: flex;
-      height: 197px;
+      max-height: 560px;
       overflow-x: hidden;
     }
 

@@ -1,12 +1,12 @@
 import ImageResponsive from "@/app/components/ImageResponsive";
 import BgImg from "@assets/bg/bg_product.svg";
-import BreadCrumb from "@components/Breadcrumb";
 import ChevronRightImg from "@components/ChevronRight";
 import { getDataFromFetch } from "@lib/index";
 import clsx from "clsx";
 import Link from "next/link";
 import { getDictionary } from "../../../../get-dictionary";
 import styles from "./page.module.scss";
+import {ProductCategory} from "@/app/[lang]/components/ListProduct/ProductCategory";
 
 export default async function Home({ params }) {
   const dictionary = await getDictionary(params.lang);
@@ -42,16 +42,9 @@ export default async function Home({ params }) {
           data={productPage?.data?.attributes?.banner?.data?.attributes}
         />
       </section>
+      <ProductCategory listCategory={categories.data} />
       <section>
         <div className="container">
-          <div className={clsx(styles.productBreadcrumb, "animation")}>
-            <BreadCrumb
-              data={[
-                { title: dictionary.nav.home, url: "/" },
-                { title: dictionary.nav.products },
-              ]}
-            />
-          </div>
           <p className={clsx(styles.txt1, "animation")}>
             {dictionary.product.product}
           </p>
@@ -64,8 +57,8 @@ export default async function Home({ params }) {
         </div>
       </section>
       <section className={clsx("container", styles.secPrd)}>
-        {categories.data.map((cat) => (
-          <div key={cat.id}>
+        {categories.data.map((cat, index) => (
+          <div key={cat.id} id={`category-product-${index}`} className="category">
             <p
               className={clsx(styles.catTitle, "animation")}
               data-animation="fade-in-up"
