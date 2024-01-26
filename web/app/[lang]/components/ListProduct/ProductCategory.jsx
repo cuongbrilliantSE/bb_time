@@ -80,7 +80,6 @@ export const ProductCategory = (props) => {
           ))
         }
       </div>
-      <span>{`=============${fixCategory}=========`}</span>
     </div>
   )
 }
