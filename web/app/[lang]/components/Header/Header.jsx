@@ -14,6 +14,7 @@ import {usePathname, useRouter} from "next/navigation";
 import "./Header.scss";
 
 const Header = ({ i18n, categories }) => {
+  const [results, setResults] = useState([]);
   const [open, setOpen] = useState(false);
   const [menuLv1Open, setMenuLv1Open] = useState();
   const router = useRouter();
@@ -54,7 +55,7 @@ const Header = ({ i18n, categories }) => {
   return (
     <header>
       <div className="container">
-        <div className="nav-menu-btn" onClick={() => setOpen(!open)}>
+        <div className="nav-menu-btn" onClick={() => {setOpen(!open); setResults([]);}}>
           <Image src={MenuIcon.src} alt="menu" width={24} height={24} />
         </div>
         <nav className={clsx("nav", { "nav-open": open })}>
@@ -154,7 +155,7 @@ const Header = ({ i18n, categories }) => {
                   </li>
                 ))}
               </ul>
-              <Search />
+              <Search results={results} setResults={setResults}/>
             </div>
 
             <ChangeLanguage />

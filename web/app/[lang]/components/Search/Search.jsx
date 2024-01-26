@@ -7,14 +7,15 @@ import {SearchResultsList} from "@/app/[lang]/components/Search/SearchResultsLis
 
 import SearchSpace from "./SearchSpace";
 
-const Search = () => {
+const Search =  ({ results, setResults })  => {
     const [isOpen, setIsOpen] = useState(false);
 
     const searchImgSrc = isOpen ? CloseImg.src : SearchImg.src;
     const togglePopup = () => {
         setIsOpen(!isOpen);
+        setResults([]);
     }
-    const [results, setResults] = useState([]);
+    // const [results, setResults] = useState(result);
     const [screenWidth, setScreenWidth] = useState(0);
     const searchRef = useRef(null);
 
