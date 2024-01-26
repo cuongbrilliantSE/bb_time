@@ -25,7 +25,7 @@ export const ProductCategory = (props) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisible);
+    document.addEventListener("scroll", toggleVisible);
     return () => window.removeEventListener("scroll", toggleVisible);
   }, []);
 
