@@ -15,7 +15,7 @@ const Search = () => {
         setIsOpen(!isOpen);
     }
     const [results, setResults] = useState([]);
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState(0);
     const searchRef = useRef(null);
 
     useEffect(() => {
@@ -40,6 +40,8 @@ const Search = () => {
         const handleResize = () => {
             setScreenWidth(window.innerWidth);
         };
+
+        handleResize();
 
         window.addEventListener('resize', handleResize);
 
