@@ -1,5 +1,5 @@
-import { getDictionary } from "../../../../get-dictionary";
-import { getDataFromFetch } from "@lib/index";
+import {getDictionary} from "../../../../get-dictionary";
+import {getDataFromFetch} from "@lib/index";
 import styles from "./page.module.scss";
 import ImageResponsive from "@/app/components/ImageResponsive";
 import BreadCrumb from "@components/Breadcrumb";
@@ -11,41 +11,31 @@ import FbImg from "@assets/logo/fb_outlined.svg";
 import PinterestImg from "@assets/logo/pinterest_outlined.svg";
 import InstaImg from "@assets/logo/instagram_outlined.svg";
 
-export default async function ContactPage({ params }) {
+export default async function ContactPage({params}) {
   const dictionary = await getDictionary(params.lang);
-  const [contactPage] = await getDataFromFetch([
-    {
-      object: "contact",
-      query: {
-        populate: {
-          banner: "*",
-        },
+  const [contactPage] = await getDataFromFetch([{
+    object: "contact", query: {
+      populate: {
+        banner: "*",
       },
     },
-  ]);
+  },]);
 
-  return (
-    <main>
-      <section className={clsx(styles.banner)}>
-        <ImageResponsive
-          data={contactPage?.data?.attributes?.banner?.data?.attributes}
-        />
-      </section>
-      <section className="container">
+  return (<main>
+      <ImageResponsive
+        className="max-width-container"
+        data={contactPage?.data?.attributes?.banner?.data?.attributes}
+      />
+      <div className="container">
         <div className={clsx(styles.productBreadcrumb, "animation")}>
           <BreadCrumb
-            data={[
-              { title: dictionary.nav.home, url: "/" },
-              { title: dictionary.nav.contact },
-            ]}
+            data={[{title: dictionary.nav.home, url: "/"}, {title: dictionary.nav.contact},]}
           />
         </div>
         <div className={clsx(styles.title, "animation")}>
           <p className={styles.title1}>{dictionary.contact.contact_us}</p>
           <p className={styles.title2}>{dictionary.contact.us}</p>
         </div>
-      </section>
-      <section className={clsx("container", styles.outer)}>
         <div className={styles.wp}>
           <div className={styles.formWp}>
             <div className={clsx(styles.itemShort, "animation")}>
@@ -95,22 +85,21 @@ export default async function ContactPage({ params }) {
             </p>
             <div className={styles.snsWp}>
               <a className={clsx(styles.sns, "animation")}>
-                <img src={TwitterImg.src} />
+                <img src={TwitterImg.src}/>
               </a>
               <a className={clsx(styles.sns, "animation")}>
-                <img src={FbImg.src} />
+                <img src={FbImg.src}/>
               </a>
               <a className={clsx(styles.sns, "animation")}>
-                <img src={PinterestImg.src} />
+                <img src={PinterestImg.src}/>
               </a>
               <a className={clsx(styles.sns, "animation")}>
-                <img src={InstaImg.src} />
+                <img src={InstaImg.src}/>
               </a>
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <div className={styles.end}></div>
-    </main>
-  );
+    </main>);
 }
