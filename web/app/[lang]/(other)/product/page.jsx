@@ -34,16 +34,21 @@ export default async function Home({ params }) {
       },
     },
   ]);
-
+const stickyPosition = {
+  position: 'sticky',
+  top: '99px',
+  zIndex: 9999
+}
   return (
     <main>
-      <section className={clsx(styles.banner)}>
         <ImageResponsive
+          className="max-width-container"
           data={productPage?.data?.attributes?.banner?.data?.attributes}
         />
-      </section>
-      <ProductCategory listCategory={categories.data} />
-      <section>
+      <div className="sticky-h" style={stickyPosition}>
+        <ProductCategory listCategory={categories.data} />
+      </div>
+
         <div className="container">
           <p className={clsx(styles.txt1, "animation")}>
             {dictionary.product.product}
@@ -54,67 +59,66 @@ export default async function Home({ params }) {
           <p className={clsx(styles.pageDes, "animation")}>
             {productPage?.data?.attributes?.description}
           </p>
-        </div>
-      </section>
-      <section className={clsx("container", styles.secPrd)}>
-        {categories.data.map((cat, index) => (
-          <div key={cat.id} id={`category-product-${index}`} className="category">
-            <p
-              className={clsx(styles.catTitle, "animation")}
-              data-animation="fade-in-up"
-            >
-              {cat.attributes.title}
-            </p>
-            <div className={styles.products}>
-              {cat.attributes.products.data.map((prd, idx) => (
-                <div
-                  className={clsx(styles.prdWp, {
-                    [styles.prdWithBorder]:
-                      Math.ceil(cat.attributes.products.data.length / 2) * 2 -
-                        2 >
-                      idx,
-                  })}
-                  key={prd.id}
-                >
+
+          {categories.data.map((cat, index) => (
+            <div key={cat.id} id={`category-product-${index}`} className="category">
+              <p
+                className={clsx(styles.catTitle, "animation")}
+                data-animation="fade-in-up"
+              >
+                {cat.attributes.title}
+              </p>
+              <div className={styles.products}>
+                {cat.attributes.products.data.map((prd, idx) => (
                   <div
-                    className={clsx(styles.prdImg, "animation")}
-                    data-animation="fade-in-up"
+                    className={clsx(styles.prdWp, {
+                      [styles.prdWithBorder]:
+                      Math.ceil(cat.attributes.products.data.length / 2) * 2 -
+                      2 >
+                      idx,
+                    })}
+                    key={prd.id}
                   >
-                    <img src={BgImg.src} />
-                    <ImageResponsive
-                      className={styles.prdImg2}
-                      data={prd.attributes.thumb.data.attributes}
-                    />
+                    <div
+                      className={clsx(styles.prdImg, "animation")}
+                      data-animation="fade-in-up"
+                    >
+                      <img src={BgImg.src} />
+                      <ImageResponsive
+                        className={styles.prdImg2}
+                        data={prd.attributes.thumb.data.attributes}
+                      />
+                    </div>
+                    <div className={styles.prdIn4}>
+                      <p
+                        className={clsx(styles.prdTitle, "animation")}
+                        data-animation="fade-in-up"
+                      >
+                        {prd.attributes.full_name}
+                      </p>
+                      <p
+                        className={clsx(styles.prdDes, "animation")}
+                        data-animation="fade-in-up"
+                      >
+                        {prd?.attributes?.description ||
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"}
+                      </p>
+                      <Link
+                        href={`/product/${prd.attributes.slug}`}
+                        className={clsx(styles.detailBtn, "animation")}
+                        data-animation="fade-in-up"
+                      >
+                        <p>{dictionary.home.view_detail}</p>
+                        <ChevronRightImg />
+                      </Link>
+                    </div>
                   </div>
-                  <div className={styles.prdIn4}>
-                    <p
-                      className={clsx(styles.prdTitle, "animation")}
-                      data-animation="fade-in-up"
-                    >
-                      {prd.attributes.full_name}
-                    </p>
-                    <p
-                      className={clsx(styles.prdDes, "animation")}
-                      data-animation="fade-in-up"
-                    >
-                      {prd?.attributes?.description ||
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"}
-                    </p>
-                    <Link
-                      href={`/product/${prd.attributes.slug}`}
-                      className={clsx(styles.detailBtn, "animation")}
-                      data-animation="fade-in-up"
-                    >
-                      <p>{dictionary.home.view_detail}</p>
-                      <ChevronRightImg />
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </section>
+          ))}
+        </div>
+
       <div className={styles.divider}></div>
     </main>
   );

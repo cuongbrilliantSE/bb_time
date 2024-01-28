@@ -16,19 +16,6 @@ export const ProductCategory = (props) => {
   const [fixCategory, setFixCategory] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
 
-  const toggleVisible = () => {
-    if (document.documentElement.scrollTop > 380) {
-      setFixCategory(true);
-    } else {
-      setFixCategory(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", toggleVisible, {passive: true});
-    return () => window.removeEventListener("scroll", toggleVisible);
-  }, []);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = (window.scrollY || document.documentElement.scrollTop) + 200;
