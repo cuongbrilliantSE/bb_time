@@ -30,7 +30,8 @@ export default async function Service({params}) {
     },
   },]);
 
-  return (<main>
+  return (
+    <main>
       <ImageResponsive
         className="max-width-container"
         data={servicePage?.data?.attributes?.banner?.data?.attributes}

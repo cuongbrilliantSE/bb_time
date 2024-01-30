@@ -57,9 +57,9 @@ export default async function DetailProduct({ params }) {
   //   console.log(JSON.stringify(product));
   return (
     <Fragment>
-      <section className={styles.banner}>
-        <ImageResponsive data={product?.banner?.data?.attributes} />
-      </section>
+      <ImageResponsive
+        className="max-width-container"
+        data={product?.banner?.data?.attributes} />
       <Tab i18n={dictionary.product} />
       <section
         style={{ scrollMarginTop: "150px" }}
