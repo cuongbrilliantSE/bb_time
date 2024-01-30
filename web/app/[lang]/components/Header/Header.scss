@@ -138,7 +138,7 @@ header {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
   }
   .nav-list {
     display: flex;
@@ -154,7 +154,7 @@ header {
     }
   }
   .nav-item {
-    margin: 0 10px;
+    padding: 0 20px;
     &:hover {
       .nav-link {
         & > a {
