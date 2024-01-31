@@ -73,6 +73,7 @@ const Header = ({ i18n, categories }) => {
                     key={idx}
                     className={clsx("nav-item", {
                       "nav-item-open": menuLv1Open === itemRoot.title,
+                      "nav-product": !idx
                     })}
                   >
                     <div className="nav-link">
