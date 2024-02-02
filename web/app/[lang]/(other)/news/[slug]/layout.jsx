@@ -57,12 +57,11 @@ export default async function DetailPostLayout({ params, children }) {
 
   return (
     <main>
-      <section className={clsx(styles.banner)}>
-        <ImageResponsive
-          data={postPage?.data?.attributes?.banner?.data?.attributes}
-        />
-      </section>
-      <section className={clsx("container", styles.lgContainer)}>
+      <ImageResponsive
+        className="max-width-container"
+        data={postPage?.data?.attributes?.banner?.data?.attributes}
+      />
+      <div className={clsx("container", styles.lgContainer)}>
         <div className={clsx(styles.breadcrumbWp, "animation")}>
           <BreadCrumb
             data={[
@@ -71,8 +70,6 @@ export default async function DetailPostLayout({ params, children }) {
             ]}
           />
         </div>
-      </section>
-      <section className={clsx("container", styles.lgContainer)}>
         <div className={styles.wp}>
           <div className={styles.postWp}>{children}</div>
           <div className={styles.sideWp}>
@@ -81,11 +78,12 @@ export default async function DetailPostLayout({ params, children }) {
             <Tags i18n={dictionary.post} data={tags.data} />
           </div>
         </div>
-      </section>
       <Share from="layout" />
       <section className={clsx("container", styles.lgContainer)}>
         <PostRelated product={detailPost} i18n={dictionary.product} />
       </section>
+
+      </div>
       <div className={styles.end}></div>
     </main>
   );
