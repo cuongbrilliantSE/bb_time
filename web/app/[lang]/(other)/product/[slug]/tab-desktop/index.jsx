@@ -108,7 +108,10 @@ const Tab = ({ i18n, product }) => {
                     })}
                   >
                     <div className={styles.guideIframe}>
-                      <iframe src={i.link}></iframe>
+                      <iframe src={i.link} title="YouTube video player"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowfullscreen></iframe>
                     </div>
 
                     <p className={styles.guideTxt}>{i.title}</p>
