@@ -303,7 +303,9 @@
   display: none;
   color: var(--white);
 }
-
+.pointer {
+  cursor: pointer;
+}
 @media only screen and (min-width: 768px) {
   .secAdvantage {
     flex-direction: row;

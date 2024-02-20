@@ -1,3 +1,5 @@
+"use client";
+
 import EmailImg from "@assets/icons/email.svg";
 import LocationImg from "@assets/icons/location.svg";
 import PhoneImg from "@assets/icons/phone.svg";
@@ -10,6 +12,15 @@ import Link from "next/link";
 import clsx from "clsx";
 
 const Footer = ({ i18n }) => {
+  const scrollTo = () => {
+    setTimeout(() => {
+      window.scrollBy({
+        top: -180,
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 450)
+  }
   return (
     <section>
       <div className={clsx("container", "footer-wp")}>
@@ -19,27 +30,30 @@ const Footer = ({ i18n }) => {
           </div>
           <div className="footer-col">
             <p className="footer-col-title">{i18n.products}</p>
-            <Link href="#" className="footer-link-item">
+            <Link href="/product#category-product-0" onClick={() => scrollTo()} className="footer-link-item">
               Thiết bị máy sưởi
             </Link>
-            <Link href="#" className="footer-link-item">
-              Thiết bị hỗ trợ hô hấp
-            </Link>
-            <Link href="#" className="footer-link-item">
+            <Link href="/product#category-product-1" onClick={() => scrollTo()} className="footer-link-item">
               Đèn chiếu vàng da
+            </Link>
+            <Link href="/product#category-product-2" onClick={() => scrollTo()} className="footer-link-item">
+              Thiết bị hỗ trợ sinh
+            </Link>
+            <Link href="/product#category-product-3" onClick={() => scrollTo()} className="footer-link-item">
+              Thiết bị hỗ trợ hô hấp
             </Link>
           </div>
           <div className="footer-col">
             <p className="footer-col-title">{i18n.news}</p>
-            <Link href="#" className="footer-link-item">
-              Cẩm nang mẹ và bé
+            <Link href="/news" className="footer-link-item">
+              Tin tức BBTime
             </Link>
-            <Link href="#" className="footer-link-item">
-              Sản phẩm mới
-            </Link>
-            <Link href="#" className="footer-link-item">
-              BBTIME
-            </Link>
+            {/*<Link href="#" className="footer-link-item">*/}
+            {/*  Sản phẩm mới*/}
+            {/*</Link>*/}
+            {/*<Link href="#" className="footer-link-item">*/}
+            {/*  BBTIME*/}
+            {/*</Link>*/}
           </div>
           <div className="footer-col">
             <p className="footer-col-title">{i18n.contact}</p>

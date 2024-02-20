@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import styles from "./page.module.scss";
 import Footer from "../../components/Footer";
+import {useRouter} from "next/navigation";
 
 const COLORS = [
   "linear-gradient(226deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)",
@@ -30,6 +31,18 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
     }
   }, [data]);
 
+  const router = useRouter();
+
+  const gotoPageProduct = (id) => {
+    router.push(`/product#${id}`, { scroll: true})
+    setTimeout(() => {
+      window.scrollBy({
+        top: -180,
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 450)
+  }
   return (
     <>
       <div className={styles.fullPage}>
@@ -68,7 +81,7 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
             {data[1].data.map((category, idx) => (
               <div
                 key={idx}
-                className={clsx(styles.categoryItem, "animation")}
+                className={clsx(styles.categoryItem, "animation", "pointer")}
                 data-animation-delay={`${0.2 + (idx + 1) * 0.2}s`}
               >
                 <img
@@ -94,19 +107,20 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
               {data[1].data.map((category, idx) => (
                 <div key={idx}>
                   <div
-                    className={clsx(styles.categoryItem, "animation")}
+                    className={clsx(styles.categoryItem, "animation", styles.pointer)}
                     data-animation-delay={`${0.2 + (idx + 1) * 0.2}s`}
+                    onClick={() => gotoPageProduct(category.attributes.IdCategory)}
                   >
                     <img
                       className={clsx(
                         { [styles.categoryPing]: idx == 0 },
-                        styles.categoryHoverPing
+                        styles.categoryHoverPing,
                       )}
                       src={getImgUrl(
                         category.attributes.icon.data.attributes.url
                       )}
                     />
-                    <p onClick={() => console.log(category, '================')}>{category.attributes.title}</p>
+                    <p>{category.attributes.title}</p>
                   </div>
                 </div>
               ))}
