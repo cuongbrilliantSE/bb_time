@@ -3,7 +3,6 @@ import ChevronRightImg from "@assets/icons/chevron_right.svg";
 import DividerImg from "@assets/icons/divider_gradient.svg";
 import ImageResponsive from "@components/ImageResponsive";
 import MouseScroll from "@components/MouseScroll";
-import useWindowSize from "@hooks/use-window-size";
 import { getImgUrl } from "@lib/index";
 import clsx from "clsx";
 import { useEffect } from "react";
@@ -107,7 +106,7 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
                         category.attributes.icon.data.attributes.url
                       )}
                     />
-                    <p>{category.attributes.title}</p>
+                    <p onClick={() => console.log(category, '================')}>{category.attributes.title}</p>
                   </div>
                 </div>
               ))}
