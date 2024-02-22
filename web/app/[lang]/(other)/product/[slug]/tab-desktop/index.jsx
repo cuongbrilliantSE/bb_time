@@ -1,6 +1,6 @@
 "use client";
 import styles from "./style.module.scss";
-import { Fragment, useEffect, useRef, useState } from "react";
+import {Fragment, useEffect, useRef, useState} from "react";
 import clsx from "clsx";
 import ChevronRight from "@components/ChevronRight";
 import Collapse from "@components/Collapse";
@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import BgDocs from "@assets/bg/bg_docs.svg";
 
-const Tab = ({ i18n, product }) => {
+const Tab = ({i18n, product}) => {
   const [selectedTab, setSelectedTab] = useState(0);
   const ref = useRef();
 
@@ -19,6 +19,18 @@ const Tab = ({ i18n, product }) => {
     ref.current.slickGoTo(selectedTab);
   }, [selectedTab]);
 
+  const downLoadDocument = (url) => {
+    // window.open(url, '_blank');
+    fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = 'document';
+        link.click();
+      })
+      .catch(console.error);
+  }
   return (
     <Fragment>
       <section className={clsx("container", styles.wp)}>
@@ -74,7 +86,7 @@ const Tab = ({ i18n, product }) => {
                 styles.techFeature,
                 "animation"
               )}
-              dangerouslySetInnerHTML={{ __html: product.technical_feature }}
+              dangerouslySetInnerHTML={{__html: product.technical_feature}}
             />
             <div className={styles.specOut}>
               <div className={styles.specs}>
@@ -82,10 +94,10 @@ const Tab = ({ i18n, product }) => {
                   <div
                     className={clsx(styles.specWp, "animation", {
                       [styles.specNoBorder]:
-                        Math.ceil(product?.product_specifications.length / 2) *
-                          2 -
-                          2 <=
-                        idx,
+                      Math.ceil(product?.product_specifications.length / 2) *
+                      2 -
+                      2 <=
+                      idx,
                     })}
                     key={idx}
                   >
@@ -104,7 +116,7 @@ const Tab = ({ i18n, product }) => {
                     key={idx}
                     className={clsx(styles.guideWp, "animation", {
                       [styles.guideBorder]:
-                        Math.ceil(product?.guides.length / 2) * 2 - 2 > idx,
+                      Math.ceil(product?.guides.length / 2) * 2 - 2 > idx,
                     })}
                   >
                     <div className={styles.guideIframe}>
@@ -122,21 +134,25 @@ const Tab = ({ i18n, product }) => {
             <div className={clsx(styles.tabContent, styles.tabDocs)}>
               {product?.product_documents?.map((i, idx) => (
                 <div className={clsx(styles.doc)} key={idx}>
-                  <div className={clsx(styles.docSvg, "animation")}>
-                    <img src={BgDocs.src} />
-                    <img src={BookImg.src} />
+                  <div style={{width: '30%'}} className={clsx(styles.docSvg, "animation")}>
+                    <img src={BgDocs.src}/>
+                    <img src={BookImg.src}/>
                   </div>
-                  <div>
+                  <div style={{width: '70%'}}>
                     <p className={clsx(styles.docTxt, "animation")}>
                       {i.title}
                     </p>
                     <p className={clsx(styles.docDes, "animation")}>
                       {i.description}
                     </p>
-                    <button className={clsx(styles.btnDoc, "animation")}>
-                      <img src={DownloadImg.src} />
-                      <p>{i18n.download}</p>
-                    </button>
+                    {
+                      i.urlDoc && <button
+                        onClick={() => downLoadDocument(i.urlDoc)}
+                        className={clsx(styles.btnDoc, "animation")}>
+                        <img src={DownloadImg.src}/>
+                        <p>{i18n.download}</p>
+                      </button>
+                    }
                   </div>
                 </div>
               ))}

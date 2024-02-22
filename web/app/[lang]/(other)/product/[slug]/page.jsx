@@ -112,9 +112,11 @@ export default async function DetailProduct({ params }) {
       </section>
       <GalleryTab product={product} i18n={dictionary.product} />
       <VideoList product={product} i18n={dictionary.product} />
+
       <section className={"container"}>
         <PostRelated product={product} i18n={dictionary.product} />
       </section>
+
       <Connect i18n={dictionary.connect} />
     </Fragment>
   );

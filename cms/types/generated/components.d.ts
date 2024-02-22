@@ -101,11 +101,13 @@ export interface ProductDocument extends Schema.Component {
   collectionName: 'components_product_documents';
   info: {
     displayName: 'Document';
+    description: '';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     attachment: Attribute.Media & Attribute.Required;
+    urlDoc: Attribute.String;
   };
 }
 

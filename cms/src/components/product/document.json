@@ -1,7 +1,8 @@
 {
   "collectionName": "components_product_documents",
   "info": {
-    "displayName": "Document"
+    "displayName": "Document",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,12 +15,15 @@
       "required": true
     },
     "attachment": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "urlDoc": {
+      "type": "string"
     }
   }
 }
