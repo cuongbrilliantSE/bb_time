@@ -18,6 +18,7 @@ export default async function ContactPage({params}) {
       populate: {
         banner: "*",
       },
+      locale: params.lang === 'en' ? params.lang : 'vi-VN',
     },
   },]);
 

@@ -58,7 +58,6 @@ const HistoryDesktop = ({ data }) => {
       <div
         className={styles.btnRight}
         onClick={() => {
-          console.log("click");
           sliderRef.current.slickNext();
         }}
       >

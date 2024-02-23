@@ -7,22 +7,22 @@ import {usePathname, useRouter} from "next/navigation";
 const ChangeLanguage = () => {
   const [isVn, setIsVN] = useState(true);
   const router = useRouter();
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!pathname.includes('/vi/')) {
       setIsVN(false);
     }
-  }, []);
+  }, [pathname]);
 
   const changeLanguage = () => {
     let url = '';
-    if (pathname.includes('/vi/')) {
-      url = pathname.replace('/vi/', '/en/');
+    if (pathname.includes('/vi')) {
+      url = pathname.replace('/vi', '/en');
     } else {
-      url = pathname.replace('/en/', '/vi/');
+      url = pathname.replace('/en', '/vi');
     }
-    router.push(url)
+    router.push(url);
   }
 
 

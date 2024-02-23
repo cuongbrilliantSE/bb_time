@@ -9,7 +9,7 @@ import clsx from "clsx";
 import BgImg from "@assets/bg/bg_detail.svg";
 
 const Gallery = ({ data }) => {
-  const [dataImg, setDataImg] = useState(data[0].file.data.attributes);
+  const [dataImg, setDataImg] = useState(data[0]?.file?.data?.attributes);
   const settings = {
     dots: false,
     infinite: false,

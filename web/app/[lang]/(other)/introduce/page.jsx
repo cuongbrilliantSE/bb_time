@@ -31,6 +31,7 @@ export default async function IntroPage({params}) {
           populate: "*",
         },
       },
+      locale: params.lang === 'en' ? params.lang : 'vi-VN',
     },
   },]);
 

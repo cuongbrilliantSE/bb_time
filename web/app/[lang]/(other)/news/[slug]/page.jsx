@@ -33,6 +33,7 @@ export default async function PostDetailPage({ params, searchParams }) {
             $eq: params.slug,
           },
         },
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
       },
     },
   ]);

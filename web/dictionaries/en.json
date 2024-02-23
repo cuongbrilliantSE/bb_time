@@ -1,11 +1,11 @@
 {
   "nav": {
-    "home": "Trang chủ",
-    "products": "Sản phẩm",
-    "services": "Dịch vụ",
-    "news": "Tin tức",
-    "introduce": "Giới thiệu",
-    "contact": "Liên hệ"
+    "home": "Home",
+    "products": "Product",
+    "services": "Services",
+    "news": "News",
+    "introduce": "Introduce",
+    "contact": "Contact"
   },
   "home": {
     "domain": "Lĩnh vực của",
@@ -23,7 +23,7 @@
     "ours": "chúng tôi",
     "info": "Thông tin chung",
     "specifications": "Thông số sản phẩm",
-    "galleries": "Hình ảnh & video",
+    "galleries": "Image & video",
     "model": "MODEL",
     "manufacturer": "Hãng sản xuất",
     "origin": "Xuất xứ",
