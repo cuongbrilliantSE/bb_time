@@ -61,6 +61,7 @@ export default async function RootLayout({ children, params }) {
             },
           },
         },
+        locale: params.lang === 'vi' ? 'vi-VN' : 'en'
       },
     },
   ]);

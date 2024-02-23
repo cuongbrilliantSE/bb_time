@@ -21,16 +21,21 @@ export default async function DetailPostLayout({ params, children }) {
         populate: {
           banner: "*",
         },
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
       },
     },
 
     {
       object: "post-category/count-post",
-      query: {},
+      query: {
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
+      },
     },
     {
       object: "tags",
-      query: {},
+      query: {
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
+      },
     },
     {
       object: `posts`,
@@ -45,6 +50,7 @@ export default async function DetailPostLayout({ params, children }) {
             $eq: params.slug,
           },
         },
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
       },
     },
   ]);

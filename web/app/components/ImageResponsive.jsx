@@ -1,7 +1,7 @@
 const ImageResponsive = ({ data, className }) => {
-  const _large = data?.formats?.large?.url || data.url;
-  const _medium = data?.formats?.medium?.url || data.url;
-  const _small = data?.formats?.small?.url || data.url;
+  const _large = data?.formats?.large?.url || data?.url;
+  const _medium = data?.formats?.medium?.url || data?.url;
+  const _small = data?.formats?.small?.url || data?.url;
 
   if (data.width > data.height) {
     return (

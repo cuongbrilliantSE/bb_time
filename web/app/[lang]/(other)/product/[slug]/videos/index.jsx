@@ -11,7 +11,6 @@ import {Fragment, useState} from "react";
 const ListVideos = ({i18n, product}) => {
   const [url, setUrl] = useState(product.videos[0]?.link);
 
-  console.log(product.videos, '=video======')
   return (
     product.videos.length && <section className={clsx("container")}>
       <div className={styles.outer}>

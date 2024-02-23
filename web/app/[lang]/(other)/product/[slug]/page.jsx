@@ -45,6 +45,7 @@ export default async function DetailProduct({ params }) {
             $eq: params.slug,
           },
         },
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
       },
     },
   ]);

@@ -23,6 +23,7 @@ export default async function Home({ params }) {
       object: "categories",
       query: {
         populate: ["icon"],
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
       },
     },
   ]);

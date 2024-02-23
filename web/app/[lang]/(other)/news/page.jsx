@@ -29,6 +29,7 @@ export default async function PostPage({params, searchParams}) {
           populate: "*",
         },
       },
+      locale: params.lang === 'en' ? params.lang : 'vi-VN',
     },
   }, {
     object: "post-page", query: {

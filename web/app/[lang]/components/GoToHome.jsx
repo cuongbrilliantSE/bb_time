@@ -6,7 +6,6 @@ const GoToHome = () => {
   const [showBtn, setShowBtn] = useState(false);
 
   const toggleVisible = () => {
-    console.log("scroll");
     if (
       document.body.scrollTop > 1200 ||
       document.documentElement.scrollTop > 1200

@@ -27,6 +27,7 @@ export default async function Service({params}) {
           populate: "*",
         },
       },
+      locale: params.lang === 'en' ? params.lang : 'vi-VN',
     },
   },]);
 
@@ -44,15 +45,15 @@ export default async function Service({params}) {
         </div>
         <OursService
           i18n={dictionary.service}
-          data={servicePage.data.attributes}
+          data={servicePage?.data?.attributes}
         />
-        <Commit i18n={dictionary.service} data={servicePage.data.attributes}/>
+        <Commit i18n={dictionary.service} data={servicePage?.data?.attributes}/>
         {/*<CustomerReply*/}
         {/*  i18n={dictionary.service}*/}
         {/*  data={servicePage.data.attributes}*/}
         {/*/>*/}
         {/*<Partner data={servicePage.data.attributes} />*/}
-        <Question i18n={dictionary.service} data={servicePage.data.attributes}/>
+        <Question i18n={dictionary.service} data={servicePage?.data?.attributes}/>
         <Connect i18n={dictionary.connect}/>
       </div>
     </main>);
