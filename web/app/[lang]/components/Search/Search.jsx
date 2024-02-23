@@ -16,7 +16,7 @@ const Search =  ({ results, setResults })  => {
         setResults([]);
     }
     // const [results, setResults] = useState(result);
-    const [screenWidth, setScreenWidth] = useState(0);
+    const [screenWidth, setScreenWidth] = useState(1025);
     const searchRef = useRef(null);
 
     useEffect(() => {
