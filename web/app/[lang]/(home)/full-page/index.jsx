@@ -43,6 +43,14 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
       });
     }, 450)
   }
+
+  const goToViewPostDetail = (url) => {
+    if (!url) {
+      return;
+    }
+    router.push(`/news/${url}`);
+  }
+  console.log('data[0].data.attributes.advantages', data[0].data.attributes.advantages)
   return (
     <>
       <div className={styles.fullPage}>
@@ -190,6 +198,7 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
                 className={clsx("animation", styles.advBtn)}
                 data-animation="fade-in-right"
                 data-animation-delay="0.8s"
+                onClick={() => goToViewPostDetail(adv?.post?.data?.attributes?.slug)}
               >
                 <p>{i18n.view_detail}</p>
                 <img src={ChevronRightImg.src} />

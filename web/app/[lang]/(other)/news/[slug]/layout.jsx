@@ -10,6 +10,7 @@ import Gallery from "../galley";
 import ListCategories from "../list-categories";
 import Tags from "../tags";
 import PostRelated from "@/app/components/post-relate";
+import { notFound } from "next/navigation";
 
 export default async function DetailPostLayout({ params, children }) {
   const dictionary = await getDictionary(params.lang);
