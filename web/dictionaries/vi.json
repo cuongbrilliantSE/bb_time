@@ -39,7 +39,9 @@
   "connect": {
     "connect": "Kết nối với BBTIME",
     "email_placeholder": "Email hoặc Số điện thoại",
-    "send_info": "Gửi thông tin"
+    "send_info": "Gửi thông tin",
+    "pls_type_info": "Vui lòng nhập email hoặc số điện thoại",
+    "successfully_send": "Cảm ơn bạn đã để lại thông tin, chúng tôi sẽ liên hệ bạn sớm nhất có thể"
   },
   "service": {
     "service": "Dịch vụ",
