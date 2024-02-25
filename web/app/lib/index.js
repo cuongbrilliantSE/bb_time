@@ -17,6 +17,29 @@ export const getDataFromFetch = async (queries) => {
   return res;
 };
 
+export const pushDataToObject = async (object, body) => {
+    try {
+
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/${object}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            cache: "no-store",
+            body: JSON.stringify(body),
+        });
+
+        if (!res.ok) {
+            throw new Error('Failed to push data to object');
+        }
+
+        return res.json();
+    } catch (error) {
+        console.error('Error:', error);
+        throw error;
+    }
+};
+
 export const formatPrefixNumber = (x, numberDigit = 2) => {
   const _digit = String(x).length;
   const _remain = numberDigit - _digit;
