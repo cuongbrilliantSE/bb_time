@@ -840,6 +840,52 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiCustomerCustomer extends Schema.CollectionType {
+  collectionName: 'customers';
+  info: {
+    singularName: 'customer';
+    pluralName: 'customers';
+    displayName: 'Customer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    contact: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::customer.customer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::customer.customer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::customer.customer',
+      'oneToMany',
+      'api::customer.customer'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -1665,6 +1711,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
+      'api::customer.customer': ApiCustomerCustomer;
       'api::footer.footer': ApiFooterFooter;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::introduce.introduce': ApiIntroduceIntroduce;

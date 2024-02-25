@@ -6,7 +6,8 @@ import { i18n } from "../../i18n-config";
 import Script from "next/script";
 import AnimationInject from "./components/Animation";
 import { getDataFromFetch } from "@lib/index";
-
+import {ToastContainer} from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
@@ -74,7 +75,11 @@ export default async function RootLayout({ children, params }) {
       </head>
 
       <body className={segoe.className}>
-        <Header i18n={dictionary.nav} categories={data.data} />
+      <ToastContainer
+          position="bottom-right"
+      />
+
+      <Header i18n={dictionary.nav} categories={data.data} />
         {children}
         {/* <Footer i18n={dictionary.footer} /> */}
         {/* <GoToHome /> */}
