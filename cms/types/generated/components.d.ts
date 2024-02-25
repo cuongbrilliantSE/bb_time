@@ -11,6 +11,7 @@ export interface HomeAdvantage extends Schema.Component {
     description: Attribute.Text & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
     subject: Attribute.String;
+    post: Attribute.Relation<'home.advantage', 'oneToOne', 'api::post.post'>;
   };
 }
 
