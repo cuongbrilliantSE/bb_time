@@ -22,10 +22,10 @@ const Ads = ({ data }) => {
                 <p>{item}</p>
               </div>
             ))}
-            <div className={clsx(styles.button, "animation")}>
-              <p>{i.button}</p>
-              <img src={ArrowRightImg.src} />
-            </div>
+            {/*<div className={clsx(styles.button, "animation")}>*/}
+            {/*  <p>{i.button}</p>*/}
+            {/*  <img src={ArrowRightImg.src} />*/}
+            {/*</div>*/}
           </div>
         </div>
       ))}
