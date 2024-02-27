@@ -3,13 +3,15 @@ import {getDataFromFetch} from "@lib/index";
 import styles from "./page.module.scss";
 import ImageResponsive from "@/app/components/ImageResponsive";
 import BreadCrumb from "@components/Breadcrumb";
-import ChevronRightImg from "@components/ChevronRight";
 import clsx from "clsx";
-import Link from "next/link";
 import TwitterImg from "@assets/logo/twitter_outlined.svg";
 import FbImg from "@assets/logo/fb_outlined.svg";
 import PinterestImg from "@assets/logo/pinterest_outlined.svg";
 import InstaImg from "@assets/logo/instagram_outlined.svg";
+
+import dynamic from 'next/dynamic';
+
+const ContactForm = dynamic(() => import('../contact/contact-form/index'), { ssr: false });
 
 export default async function ContactPage({params}) {
   const dictionary = await getDictionary(params.lang);
@@ -38,36 +40,7 @@ export default async function ContactPage({params}) {
           <p className={styles.title2}>{dictionary.contact.us}</p>
         </div>
         <div className={styles.wp}>
-          <div className={styles.formWp}>
-            <div className={clsx(styles.itemShort, "animation")}>
-              <input
-                className={styles.input}
-                placeholder={dictionary.contact.name}
-              />
-            </div>
-            <div className={clsx(styles.itemShort, "animation")}>
-              <input
-                className={styles.input}
-                placeholder={dictionary.contact.email}
-              />
-            </div>
-            <div className={clsx(styles.itemLong, "animation")}>
-              <input
-                className={styles.input}
-                placeholder={dictionary.contact.phone_number}
-              />
-            </div>
-            <div className={clsx(styles.itemLong, "animation")}>
-              <textarea
-                className={styles.input}
-                placeholder={dictionary.contact.content}
-                rows="4"
-              />
-            </div>
-            <div className="animation">
-              <button className={styles.btn}>{dictionary.contact.send}</button>
-            </div>
-          </div>
+          <ContactForm dictionary={dictionary}/>
           <div className={styles.infoWp}>
             <p className={clsx(styles.txtTitle, "animation")}>
               {contactPage.data.attributes.title}
