@@ -1198,6 +1198,12 @@ export interface ApiPostPost extends Schema.CollectionType {
         };
       }>;
     posts: Attribute.Relation<'api::post.post', 'oneToMany', 'api::post.post'>;
+    uri: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
