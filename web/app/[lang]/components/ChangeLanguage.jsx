@@ -10,7 +10,7 @@ const ChangeLanguage = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!pathname.includes('/vi/')) {
+    if (!pathname.includes('/vi')) {
       setIsVN(false);
     }
   }, [pathname]);
@@ -18,11 +18,10 @@ const ChangeLanguage = () => {
   const changeLanguage = () => {
     let url = '';
     if (pathname.includes('/vi')) {
-      url = pathname.replace('/vi', '/en');
+      router.push('/en');
     } else {
-      url = pathname.replace('/en', '/vi');
+      router.push('/vi');
     }
-    router.push(url);
   }
 
 

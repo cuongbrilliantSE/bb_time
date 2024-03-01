@@ -18,8 +18,8 @@ export default async function Home({params}) {
         populate: {
           banner: "*",
         },
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
       },
-      locale: params.lang === 'en' ? params.lang : 'vi-VN',
     },
     {
       object: "categories",

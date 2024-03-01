@@ -36,13 +36,18 @@ export default async function PostPage({params, searchParams}) {
       populate: {
         banner: "*",
       },
+      locale: params.lang === 'en' ? params.lang : 'vi-VN',
     },
   },
 
     {
-      object: "post-category/count-post", query: {},
+      object: "post-category/count-post", query: {
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
+      },
     }, {
-      object: "tags", query: {},
+      object: "tags", query: {
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
+      },
     },]);
 
   return (<main>

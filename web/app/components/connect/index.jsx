@@ -24,13 +24,18 @@ const Connect = ({ i18n }) => {
       return;
     }
 
-    const res = await pushDataToObject('customers', {
-      data: {contact}
-    });
+    try {
+      const res = await pushDataToObject('customers', {
+        data: {contact}
+      });
 
-    if (res && res.data) {
-      toast.success(i18n.successfully_send);
-      setContact('');
+      if (res && res.data) {
+        toast.success(i18n.successfully_send);
+        setContact('');
+      }
+    }
+    catch (e) {
+      toast.error(dictionary.connect.error_send);
     }
 
   };

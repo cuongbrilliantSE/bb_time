@@ -17,6 +17,7 @@ export default async function Home({ params }) {
             populate: "*",
           },
         },
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
       },
     },
     {
