@@ -19,7 +19,7 @@ const COLORS = [
   "linear-gradient(132deg, #D24074 -0.67%, #1268C3 102.54%)",
 ];
 
-const FullPage = ({ data, i18n, i18nFooter }) => {
+const FullPage = ({ lang, data, i18n, i18nFooter }) => {
   useEffect(() => {
     if (document) {
       document
@@ -34,7 +34,7 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
   const router = useRouter();
 
   const gotoPageProduct = (id) => {
-    router.push(`/product#${id}`, { scroll: true})
+    router.push(`${lang}/product#${id}`, { scroll: true})
     setTimeout(() => {
       window.scrollBy({
         top: -180,
@@ -42,6 +42,13 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
         behavior: "smooth",
       });
     }, 450)
+  }
+
+  const goToViewPostDetail = (url) => {
+    if (!url) {
+      return;
+    }
+    router.push(`${lang}/news/${url}`);
   }
   return (
     <>
@@ -68,12 +75,12 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
           <p className={clsx(styles.txtCategory1, "animation")}>
             {i18n.domain}
           </p>
-          <p
-            className={clsx(styles.txtCategory2, "animation")}
-            data-animation-delay="0.2s"
-          >
-            {i18n.ours}
-          </p>
+          {/*<p*/}
+          {/*  className={clsx(styles.txtCategory2, "animation")}*/}
+          {/*  data-animation-delay="0.2s"*/}
+          {/*>*/}
+          {/*  {i18n.ours}*/}
+          {/*</p>*/}
           <div className={clsx(styles.horizontalDivider)}>
             <div className="animation" data-animation="scale-to-right"></div>
           </div>
@@ -190,6 +197,7 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
                 className={clsx("animation", styles.advBtn)}
                 data-animation="fade-in-right"
                 data-animation-delay="0.8s"
+                onClick={() => goToViewPostDetail(adv?.post?.data?.attributes?.slug)}
               >
                 <p>{i18n.view_detail}</p>
                 <img src={ChevronRightImg.src} />

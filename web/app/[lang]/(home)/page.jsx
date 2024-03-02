@@ -17,6 +17,7 @@ export default async function Home({ params }) {
             populate: "*",
           },
         },
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
       },
     },
     {
@@ -34,6 +35,7 @@ export default async function Home({ params }) {
     <main>
       <FullPage
         data={data}
+        lang={params.lang}
         i18n={dictionary.home}
         i18nFooter={dictionary.footer}
       />

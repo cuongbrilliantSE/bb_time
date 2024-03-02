@@ -24,6 +24,11 @@
     },
     "subject": {
       "type": "string"
+    },
+    "post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post"
     }
   }
 }
