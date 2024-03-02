@@ -24,6 +24,14 @@ export interface HomeDomain extends Schema.Component {
   attributes: {
     title: Attribute.String & Attribute.Required;
     icon: Attribute.Media & Attribute.Required;
+    content_html: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
   };
 }
 

@@ -7,22 +7,10 @@ import clsx from "clsx";
 import { getImgUrl } from "@lib/index";
 import ChevronRightImg from "@components/ChevronRight";
 import React from 'react';
-import Popup from "reactjs-popup";
+import CustomPopup from "@/app/components/custom-popup";
 
 
 const OursService = ({ i18n, data }) => {
-    const contentStyle = { background: '#fff',
-        'min-width': '600px',
-        'max-width': '600px',
-        'min-height': '200px',
-        'overflow-x': 'hidden',
-        'overflow-y': 'auto',
-        border: '1px solid #d7d7d7',
-        'border-radius': '5px'
-    };
-    const overlayStyle = { background: 'rgba(0,0,0,0.5)' };
-    const arrowStyle = { color: '#000' };
-
   return (
     <section className="container">
       <div className={styles.wp}>
@@ -72,29 +60,16 @@ const OursService = ({ i18n, data }) => {
                 {i.attributes.description}
               </p>
               <div className={styles.link}>
-                  <Popup
-                      trigger={<div
-                          className={clsx(styles.detailBtn, "animation")}
-                          data-animation="fade-in-up">
-                          <p>{i18n.view_detail}</p>
-                          <ChevronRightImg />
-                      </div>}
-                      modal
-                      nested
-                      {...{ contentStyle, overlayStyle, arrowStyle }}
-                  >
-                      {close => (
-                          <div className={styles.modal}>
-                              <button className={styles.close} onClick={close}>
-                                  &#215;
-                              </button>
-                              <div className={styles.header}> {i18n.detail}</div>
-                              <div className={styles.content}
-                                   dangerouslySetInnerHTML={{ __html: i.attributes.content_html }}>
-                              </div>
-                          </div>
-                      )}
-                  </Popup>
+                  <CustomPopup
+                    trigger={<div
+                        className={clsx(styles.detailBtn, "animation")}
+                        data-animation="fade-in-up">
+                        <p>{i18n.view_detail}</p>
+                        <ChevronRightImg/>
+                    </div>}
+                    header={i18n.detail}
+                    content_html={i.attributes.content_html}
+                    />
               </div>
             </div>
           ))}
