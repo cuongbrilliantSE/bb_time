@@ -13,7 +13,10 @@ import Popup from "reactjs-popup";
 const OursService = ({ i18n, data }) => {
     const contentStyle = { background: '#fff',
         'min-width': '600px',
+        'max-width': '600px',
         'min-height': '200px',
+        'overflow-x': 'hidden',
+        'overflow-y': 'auto',
         border: '1px solid #d7d7d7',
         'border-radius': '5px'
     };
@@ -85,6 +88,7 @@ const OursService = ({ i18n, data }) => {
                               <button className={styles.close} onClick={close}>
                                   &times;
                               </button>
+                              <div className={styles.header}> Chi tiết dịch vụ</div>
                               <div className={styles.content}
                                    dangerouslySetInnerHTML={{ __html: i.attributes.content_html }}>
                               </div>
