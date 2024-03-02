@@ -8,75 +8,76 @@
     "contact": "Contact"
   },
   "home": {
-    "domain": "Lĩnh vực của",
-    "ours": "chúng tôi",
-    "view_detail": "Xem chi tiết"
+    "domain": "Our field of",
+    "ours": "expertise",
+    "view_detail": "View details"
   },
   "footer": {
-    "products": "Sản phẩm",
-    "news": "Tin tức",
-    "contact": "Liên hệ",
-    "sns": "Mạng xã hội"
+    "products": "Product",
+    "news": "News",
+    "contact": "Contact",
+    "sns": "Social network"
   },
   "product": {
-    "product": "Sản phẩm của",
+    "product": "Our products",
     "ours": "chúng tôi",
-    "info": "Thông tin chung",
-    "specifications": "Thông số sản phẩm",
+    "info": "General information ",
+    "specifications": "Product specifications",
     "galleries": "Image & video",
     "model": "MODEL",
-    "manufacturer": "Hãng sản xuất",
-    "origin": "Xuất xứ",
-    "des": "Mô tả sản phẩm",
-    "technical_feature": "Tính năng kỹ thuật",
-    "technical_specifications": "Thông số kỹ thuật",
-    "video_guide": "Video hướng dẫn",
-    "download_docs": "Download tài liệu",
-    "download": "Tải về",
-    "posts_related": "Bài viết liên quan",
-    "view_detail": "Xem chi tiết"
+    "manufacturer": "Manufacturer",
+    "origin": "Origin",
+    "des": " Product description ",
+    "technical_feature": "Technical features",
+    "technical_specifications": "Technical specifications",
+    "video_guide": "Tutorial video",
+    "download_docs": "Download documents",
+    "download": "Download",
+    "posts_related": "Related article",
+    "view_detail": "View in detail "
   },
   "connect": {
-    "connect": "Kết nối với BBTIME",
-    "email_placeholder": "Email hoặc Số điện thoại",
-    "send_info": "Gửi thông tin",
-    "pls_type_info": "Vui lòng nhập email hoặc số điện thoại",
-    "successfully_send": "Cảm ơn bạn đã để lại thông tin, chúng tôi sẽ liên hệ bạn sớm nhất có thể"
+    "connect": "Connect with BBTIME",
+    "email_placeholder": "Email or phone number",
+    "send_info": "Send information. ",
+    "pls_type_info": "Please enter your email or phone number",
+    "successfully_send": "Thank you for providing your information, we will contact you as soon as possible ",
+    "error_send": "Invalid input data, please try again "
   },
   "service": {
-    "service": "Dịch vụ",
+    "service": "Our services",
     "ours": "của chúng tôi",
-    "view_detail": "Xem chi tiết",
-    "commit": "Cam kết",
-    "quality": "chất lượng dịch vụ",
-    "customer_reply": "Khách hàng nói về dịch vụ",
-    "question": "Câu hỏi thường gặp",
+    "view_detail": " View details",
+    "commit": "Commitment",
+    "quality": "Service quality",
+    "customer_reply": "Customer reviews of the service",
+    "question": "Frequently asked questions",
     "question_des": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
   },
   "post": {
-    "news": "Tin tức của ",
+    "news": "Our news",
     "ours": "chúng tôi",
-    "view_detail": "Xem chi tiết",
+    "view_detail": "View details",
     "min_to_read": "min. to read",
-    "category": "Danh mục",
-    "image": "Ảnh",
-    "tags": "Tìm kiếm tags",
+    "category": "List",
+    "image": "Photo",
+    "tags": "Search for tags",
     "prev": "Prev",
     "next": "Next",
-    "summary": "Tóm tắt nội dung"
+    "summary": "Summary of content"
   },
   "introduce": {
     "an": "an",
-    "introduce": "Giới thiệu"
+    "introduce": "Introduction"
   },
   "contact": {
-    "contact_us": "Liên hệ",
+    "contact_us": "Contact us",
     "us": "chúng tôi",
-    "name": "Họ và tên",
+    "name": "Full name",
     "email": "Email",
-    "phone_number": "Số điện thoại",
-    "content": "Nội dung",
+    "phone_number": "Phone number",
+    "content": "Content",
     "follow": "Follow on",
-    "send": "Gửi thông tin"
+    "send": "Send information"
   }
 }

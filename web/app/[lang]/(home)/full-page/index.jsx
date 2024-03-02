@@ -50,7 +50,7 @@ const FullPage = ({ data, i18n, i18nFooter }) => {
     }
     router.push(`/news/${url}`);
   }
-  console.log('data[0].data.attributes.advantages', data[0].data.attributes.advantages)
+  console.log('data[0].data.attributes.advantages', data[0].data.attributes)
   return (
     <>
       <div className={styles.fullPage}>
