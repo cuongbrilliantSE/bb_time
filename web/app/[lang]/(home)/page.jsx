@@ -29,7 +29,6 @@ export default async function Home({ params }) {
     },
   ]);
 
-  // console.log(JSON.stringify(data[0]));
 
   return (
     <main>
