@@ -52,7 +52,8 @@
     "quality": "chất lượng dịch vụ",
     "customer_reply": "Khách hàng nói về dịch vụ",
     "question": "Câu hỏi thường gặp",
-    "question_des": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+    "question_des": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+    "detail": "detail service"
   },
   "post": {
     "news": "Tin tức của ",
