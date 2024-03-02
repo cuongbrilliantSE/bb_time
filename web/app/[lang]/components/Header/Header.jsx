@@ -13,7 +13,7 @@ import Search from "../Search/Search";
 import {usePathname, useRouter} from "next/navigation";
 import "./Header.scss";
 
-const Header = ({ i18n, categories }) => {
+const Header = ({ lang, i18n, categories }) => {
   const [results, setResults] = useState([]);
   const [open, setOpen] = useState(false);
   const [menuLv1Open, setMenuLv1Open] = useState();
@@ -52,6 +52,24 @@ const Header = ({ i18n, categories }) => {
     },
   ];
 
+  const goToProductDetail = (url) => {
+    if (!url) {
+      return;
+    }
+
+    const uri = url.split('/')[2];
+    debugger
+    if (pathName.includes('/product/')) {
+
+      router.replace(uri);
+    } else if(pathName === '/en' || pathName === '/vi') {
+
+      router.push(`${lang}${url}`);
+    } else {
+      router.push(url);
+    }
+  }
+
   return (
     <header>
       <div className="container">
@@ -85,7 +103,7 @@ const Header = ({ i18n, categories }) => {
                           setOpen(false);
                           setMenuLv1Open(undefined);
                         }}
-                        href={itemRoot.url || "#"}
+                        href={`/${lang}/${itemRoot.url}` || "#"}
                       >
                         {itemRoot.title}{" "}
                       </Link>
@@ -139,7 +157,7 @@ const Header = ({ i18n, categories }) => {
                                         onClick={(e) => {
                                           setOpen(false);
                                           setMenuLv1Open(undefined);
-                                          router.push(lv3.url);
+                                          goToProductDetail(lv3.url)
                                         }}>
                                       <img className="image-prod" src={lv3.icon} />
                                       <span className="title-prod">{lv3.title}</span>

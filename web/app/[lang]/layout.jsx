@@ -79,7 +79,7 @@ export default async function RootLayout({ children, params }) {
           position="bottom-right"
       />
 
-      <Header i18n={dictionary.nav} categories={data.data} />
+      <Header lang={params.lang} i18n={dictionary.nav} categories={data.data} />
         {children}
         {/* <Footer i18n={dictionary.footer} /> */}
         {/* <GoToHome /> */}
