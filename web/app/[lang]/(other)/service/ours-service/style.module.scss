@@ -147,6 +147,8 @@
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
+  max-height: 600px;
+  overflow: hidden auto;
 }
 .modal > .actions {
   width: 100%;
@@ -160,15 +162,10 @@
   display: block;
   padding: 2px 5px;
   line-height: 20px;
-  right: -10px;
-  top: -10px;
+  right: 4px;
+  top: 4px;
   font-size: 24px;
   background: #ffffff;
   border-radius: 18px;
   border: 1px solid #cfcece;
-}
-
-
-.popup-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
 }
