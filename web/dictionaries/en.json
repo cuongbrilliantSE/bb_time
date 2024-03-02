@@ -52,7 +52,8 @@
     "quality": "Service quality",
     "customer_reply": "Customer reviews of the service",
     "question": "Frequently asked questions",
-    "question_des": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+    "question_des": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+    "detail": "detail service"
   },
   "post": {
     "news": "Our news",

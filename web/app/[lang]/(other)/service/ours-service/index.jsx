@@ -86,9 +86,9 @@ const OursService = ({ i18n, data }) => {
                       {close => (
                           <div className={styles.modal}>
                               <button className={styles.close} onClick={close}>
-                                  &times;
+                                  &#215;
                               </button>
-                              <div className={styles.header}> Chi tiết dịch vụ</div>
+                              <div className={styles.header}> {i18n.detail}</div>
                               <div className={styles.content}
                                    dangerouslySetInnerHTML={{ __html: i.attributes.content_html }}>
                               </div>
