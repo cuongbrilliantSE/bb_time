@@ -6,10 +6,10 @@ const SlideSuffle = ({ data }) => {
   return (
     <div className={styles.wp}>
       <div className={clsx(styles.item, styles.itemOne)}>
-        <ImageResponsive data={data[0].attributes} />
+        <ImageResponsive data={data[0]?.attributes} />
       </div>
       <div className={clsx(styles.item, styles.itemTwo)}>
-        <ImageResponsive data={data[1].attributes} />
+        <ImageResponsive data={data[1]?.attributes} />
       </div>
     </div>
   );
