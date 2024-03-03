@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick.css";
 import styles from "./page.module.scss";
 import Footer from "../../components/Footer";
 import {useRouter} from "next/navigation";
+import CustomPopup from "@/app/components/custom-popup";
 
 const COLORS = [
   "linear-gradient(226deg, #33D2FF 5.73%, #3D68DE 54.65%, #9845E8 96.75%)",
@@ -137,12 +138,20 @@ const FullPage = ({ lang, data, i18n, i18nFooter }) => {
             {data[0].data.attributes.categories.map((category, idx) => (
               <div
                 className={clsx(styles.categoryItem, "animation")}
+                style={{'cursor': 'pointer'}}
                 key={idx}
                 data-animation-delay={`${1 + (idx + 1) * 0.2}s`}
               >
-                <img
-                  className={styles.categoryHoverPing}
-                  src={getImgUrl(category.icon.data.attributes.url)}
+
+                <CustomPopup
+                    trigger={
+                        <img
+                            className={styles.categoryHoverPing}
+                            src={getImgUrl(category.icon.data.attributes.url)}
+                        />
+                  }
+                    header={category.title}
+                    content_html={category.content_html}
                 />
                 <p>{category.title}</p>
               </div>
