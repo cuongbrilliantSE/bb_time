@@ -4,7 +4,22 @@ import FullPage from "./full-page";
 
 export default async function Home({ params }) {
   const dictionary = await getDictionary(params.lang);
-  const data = await getDataFromFetch([
+  const [footer, categories, ...data] = await getDataFromFetch([
+    {
+      object: "footer",
+      query: {
+        populate: {
+        },
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
+      },
+    },
+    {
+      object: "categories",
+      query: {
+        populate: {},
+        locale: params.lang === 'en' ? params.lang : 'vi-VN',
+      },
+    },
     {
       object: "home-page",
       query: {
@@ -34,6 +49,10 @@ export default async function Home({ params }) {
     <main>
       <FullPage
         data={data}
+        footerData={{
+          footer: footer.data.attributes,
+          categories: categories.data
+        }}
         lang={params.lang}
         i18n={dictionary.home}
         i18nFooter={dictionary.footer}

@@ -8,7 +8,7 @@
     "contact": "Contact"
   },
   "home": {
-    "domain": "Our field of",
+    "domain": "Our field of expertise",
     "ours": "expertise",
     "view_detail": "View details"
   },
@@ -16,7 +16,8 @@
     "products": "Product",
     "news": "News",
     "contact": "Contact",
-    "sns": "Social network"
+    "sns": "Social network",
+    "news_bbtime": "News BBTime"
   },
   "product": {
     "product": "Our products",
