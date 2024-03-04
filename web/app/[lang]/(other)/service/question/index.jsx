@@ -18,7 +18,7 @@ const Question = ({ i18n, data }) => {
   return (
     <section className={clsx("container", styles.wp)}>
       <p className={clsx(styles.txt, "animation")}>{i18n.question}</p>
-      {/*<p className={clsx(styles.des, "animation")}>{i18n.question_des}</p>*/}
+      <p className={clsx(styles.des, "animation")}>{i18n.question_des}</p>
       <div className={clsx(styles.questions, styles.mb)}>
         {data.questions.map((i, idx) => (
           <QuestionItem key={idx} data={i} />
