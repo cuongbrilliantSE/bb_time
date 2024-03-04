@@ -186,10 +186,19 @@ export interface ServiceQuestion extends Schema.Component {
   collectionName: 'components_service_questions';
   info: {
     displayName: 'Question';
+    description: '';
   };
   attributes: {
     question: Attribute.String & Attribute.Required;
     answer: Attribute.Text & Attribute.Required;
+    answer_html: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
   };
 }
 

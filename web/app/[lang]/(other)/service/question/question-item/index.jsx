@@ -19,7 +19,8 @@ const QuestionItem = ({ data }) => {
         <ChevronRight />
       </div>
       <Collapse open={open}>
-        <p className={styles.answer}>{data.answer}</p>
+        <p className={styles.answer}
+           dangerouslySetInnerHTML={{ __html: data.answer_html }} />
       </Collapse>
     </div>
   );
