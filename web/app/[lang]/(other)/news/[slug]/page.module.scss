@@ -137,6 +137,13 @@
   p {
     text-align: justify;
   }
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin: 1em 0;
+    padding-left: 40px;
+  }
+
 }
 /***************
  * END CONTENT *
