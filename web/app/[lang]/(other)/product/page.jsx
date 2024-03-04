@@ -51,9 +51,6 @@ export default async function Home({params}) {
         <p className={clsx(styles.txt1, "animation")}>
           {dictionary.product.product}
         </p>
-        <p className={clsx(styles.txt2, "animation")}>
-          {dictionary.product.ours}
-        </p>
         <p className={clsx(styles.pageDes, "animation")}>
           {productPage?.data?.attributes?.description}
         </p>

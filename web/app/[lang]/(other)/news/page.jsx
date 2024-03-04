@@ -65,7 +65,6 @@ export default async function PostPage({params, searchParams}) {
           <div className={styles.postWp}>
             <p className={clsx(styles.title, "animation")}>
               <b>{dictionary.post.news}</b>
-              {dictionary.post.ours}
             </p>
             {posts.data.map((i, idx) => (<div className={styles.postItem} key={idx}>
                 <PostItem i18n={dictionary.post} data={i.attributes}/>

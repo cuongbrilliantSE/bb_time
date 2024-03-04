@@ -21,7 +21,6 @@ const COLORS = [
 ];
 
 const FullPage = ({ lang, data, footerData, i18n, i18nFooter }) => {
-  console.log('==FullPage==', footerData)
   useEffect(() => {
     if (document) {
       document

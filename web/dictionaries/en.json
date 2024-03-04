@@ -58,7 +58,7 @@
   },
   "post": {
     "news": "Our news",
-    "ours": "chúng tôi",
+    "ours": "",
     "view_detail": "View details",
     "min_to_read": "min. to read",
     "category": "List",
@@ -74,7 +74,7 @@
   },
   "contact": {
     "contact_us": "Contact us",
-    "us": "chúng tôi",
+    "us": "  ",
     "name": "Full name",
     "email": "Email",
     "phone_number": "Phone number",
