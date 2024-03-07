@@ -136,7 +136,22 @@
   overflow: hidden;
   p {
     text-align: justify;
+    display: block;
+    margin: 1em 0;
   }
+
+  figure {
+    display: block;
+    margin: 1em 40px;
+  }
+
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin: 1em 0;
+    padding-left: 40px;
+  }
+
 }
 /***************
  * END CONTENT *
