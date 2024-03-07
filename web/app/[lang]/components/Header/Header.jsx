@@ -58,7 +58,6 @@ const Header = ({ lang, i18n, categories }) => {
     }
 
     const uri = url.split('/')[2];
-    debugger
     if (pathName.includes('/product/')) {
 
       router.replace(uri);
