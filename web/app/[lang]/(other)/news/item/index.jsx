@@ -31,6 +31,7 @@ const PostItem = ({ data, i18n }) => {
       <span
         onClick={() => goToNewsDetail(data.slug)}
         className={clsx(styles.title, "animation")}
+        style={{cursor: 'pointer'}}
       >
         {data.title}
       </span>
