@@ -4,10 +4,13 @@ import MenuImg from "@assets/icons/menu_line.svg";
 import Link from "next/link";
 import styles from "./style.module.scss";
 import { formatPrefixNumber } from "@lib/index";
-import {useRouter} from "next/navigation";
+import {useRouter, useSearchParams} from "next/navigation";
 
 const ListCategories = ({ i18n, data }) => {
   const router = useRouter();
+  const params = useSearchParams()
+  const categoryActive = params.get('category') || null;
+
   const goToNewsCategory = (slug) => {
     if (!slug) {
       return;
@@ -22,9 +25,12 @@ const ListCategories = ({ i18n, data }) => {
       </div>
       {data.map((i, idx) => (
         <span
+          style={{cursor: 'pointer'}}
           onClick={() => goToNewsCategory(i.slug)}
           key={idx}
-          className={clsx(styles.cateWp, "animation")}
+          className={
+          clsx(styles.cateWp, "animation",
+            {[styles.active]: categoryActive && categoryActive === i.slug})}
         >
           <p className={styles.cateTitle}>{i.title}</p>
           <p className={styles.cateCount}>

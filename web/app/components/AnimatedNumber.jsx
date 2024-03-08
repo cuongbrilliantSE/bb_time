@@ -11,19 +11,20 @@ const AnimatedNumber = ({ n }) => {
     // config: { mass: 1, tension: 20, friction: 10 },
   }));
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        api.start({
-          from: { number: 0 },
-          to: { number: n },
-          delay: 1000,
-        });
-      }
-    });
-  });
+
 
   useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          api.start({
+            from: { number: 0 },
+            to: { number: n },
+            delay: 1000,
+          });
+        }
+      });
+    });
     if (refSpan.current && api) {
       observer.observe(refSpan.current);
     }
