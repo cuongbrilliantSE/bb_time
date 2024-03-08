@@ -16,10 +16,11 @@
     "products": "Sản phẩm",
     "news": "Tin tức",
     "contact": "Liên hệ",
-    "sns": "Mạng xã hội"
+    "sns": "Mạng xã hội",
+    "news_bbtime": "Tin tức BBTime"
   },
   "product": {
-    "product": "Sản phẩm của",
+    "product": "Sản phẩm của chúng tôi",
     "ours": "chúng tôi",
     "info": "Thông tin chung",
     "specifications": "Thông số sản phẩm",
@@ -56,7 +57,7 @@
     "detail": "Chi tiết dịch vụ"
   },
   "post": {
-    "news": "Tin tức của ",
+    "news": "Tin tức của chúng tôi",
     "ours": "chúng tôi",
     "view_detail": "Xem chi tiết",
     "min_to_read": "min. to read",

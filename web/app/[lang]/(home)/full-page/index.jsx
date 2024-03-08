@@ -20,7 +20,7 @@ const COLORS = [
   "linear-gradient(132deg, #D24074 -0.67%, #1268C3 102.54%)",
 ];
 
-const FullPage = ({ lang, data, i18n, i18nFooter }) => {
+const FullPage = ({ lang, data, footerData, i18n, i18nFooter }) => {
   useEffect(() => {
     if (document) {
       document
@@ -224,7 +224,7 @@ const FullPage = ({ lang, data, i18n, i18nFooter }) => {
           </section>
         ))}
         <section className={styles.section} style={{ height: "initial" }}>
-          <Footer i18n={i18nFooter} />
+          <Footer lang={lang} footerData={footerData} i18n={i18nFooter} />
         </section>
       </div>
     </>

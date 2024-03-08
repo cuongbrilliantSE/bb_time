@@ -1,4 +1,5 @@
 // CustomPopup.js
+'use client'
 import React from 'react';
 import Popup from 'reactjs-popup';
 import styles from './style.module.scss'; // adjust the path as per your project structure
@@ -28,7 +29,7 @@ const CustomPopup = ({ trigger, header, content_html }) => {
     const arrowStyle = { color: '#000' };
 
     // Determine which content style to use based on screen size
-    const currentContentStyle = window.innerWidth <= 768 ? mobileContentStyle : contentStyle;
+    const currentContentStyle = window?.innerWidth <= 768 ? mobileContentStyle : contentStyle;
 
     return (
         <Popup
