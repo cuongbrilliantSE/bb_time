@@ -1,3 +1,4 @@
+'use client'
 import styles from "./style.module.scss";
 import ImageResponsive from "@/app/components/ImageResponsive";
 import Link from "next/link";
@@ -7,19 +8,33 @@ import ClockImg from "@assets/icons/clock.svg";
 import { format } from "date-fns";
 import clsx from "clsx";
 import ChevronRightImg from "@components/ChevronRight";
+import {usePathname, useRouter} from "next/navigation";
 
 const PostItem = ({ data, i18n }) => {
+  const router = useRouter();
+  const pathName = usePathname();
+
+  const goToNewsDetail = (slug) => {
+    if (!slug) {
+      return;
+    }
+    if (pathName.includes('/news')) {
+      router.push(`news/${slug}`);
+    }
+  }
+
   return (
     <div className={styles.wp}>
       <div className={clsx(styles.img, "animation")}>
         <ImageResponsive data={data.thumb.data.attributes} />
       </div>
-      <Link
-        href={`/news/${data.slug}`}
+      <span
+        onClick={() => goToNewsDetail(data.slug)}
         className={clsx(styles.title, "animation")}
+        style={{cursor: 'pointer'}}
       >
         {data.title}
-      </Link>
+      </span>
       <div className={styles.des}>
         <div className={clsx(styles.author, "animation")}>
           <div className={styles.authorAvatar}>

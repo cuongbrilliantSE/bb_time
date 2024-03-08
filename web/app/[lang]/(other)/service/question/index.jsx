@@ -13,6 +13,8 @@ const Question = ({ i18n, data }) => {
     return [[], []];
   }, [data.questions]);
 
+    console.log(data);
+
   return (
     <section className={clsx("container", styles.wp)}>
       <p className={clsx(styles.txt, "animation")}>{i18n.question}</p>

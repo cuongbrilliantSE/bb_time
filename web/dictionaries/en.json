@@ -21,7 +21,7 @@
   },
   "product": {
     "product": "Our products",
-    "ours": "chúng tôi",
+    "ours": "",
     "info": "General information ",
     "specifications": "Product specifications",
     "galleries": "Image & video",
@@ -47,7 +47,7 @@
   },
   "service": {
     "service": "Our services",
-    "ours": "của chúng tôi",
+    "ours": "",
     "view_detail": " View details",
     "commit": "Commitment",
     "quality": "Service quality",
@@ -74,7 +74,7 @@
   },
   "contact": {
     "contact_us": "Contact us",
-    "us": "  ",
+    "us": "",
     "name": "Full name",
     "email": "Email",
     "phone_number": "Phone number",

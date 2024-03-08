@@ -70,7 +70,7 @@ export default async function PostDetailPage({ params, searchParams }) {
       <div className={clsx(styles.thumb, "animation")}>
         <ImageResponsive data={data.thumb.data.attributes} />
       </div>
-      <Summary i18n={dictionary.post} />
+      {/*<Summary i18n={dictionary.post} />*/}
       <div
         className={clsx(styles.contents, "animation")}
         dangerouslySetInnerHTML={{ __html: data.content_html }}

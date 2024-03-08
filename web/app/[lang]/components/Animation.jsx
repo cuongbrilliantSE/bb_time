@@ -6,6 +6,7 @@ import { useEffect } from "react";
  * ADD ANIMATION *
  *****************/
 
+
 // Tell the observer which elements to track
 
 /*****************
@@ -14,6 +15,7 @@ import { useEffect } from "react";
 
 const AnimationInject = () => {
   const pathname = usePathname();
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       // Loop over the entries

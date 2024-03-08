@@ -114,7 +114,8 @@
 
 @media only screen and (min-width: 768px) {
   .title {
-    flex-basis: 100%;
+    //flex-basis: 100%;
+    width: 100%;
   }
   .postWp {
     flex-direction: row;
