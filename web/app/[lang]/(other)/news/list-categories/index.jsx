@@ -1,10 +1,22 @@
+'use client';
 import clsx from "clsx";
 import MenuImg from "@assets/icons/menu_line.svg";
 import Link from "next/link";
 import styles from "./style.module.scss";
 import { formatPrefixNumber } from "@lib/index";
+import {useRouter, useSearchParams} from "next/navigation";
 
 const ListCategories = ({ i18n, data }) => {
+  const router = useRouter();
+  const params = useSearchParams()
+  const categoryActive = params.get('category') || null;
+
+  const goToNewsCategory = (slug) => {
+    if (!slug) {
+      return;
+    }
+    router.push(`news?category=${slug}`);
+  }
   return (
     <div className={styles.wp}>
       <div className={clsx(styles.txt, "animation")}>
@@ -12,16 +24,19 @@ const ListCategories = ({ i18n, data }) => {
         <p>{i18n.category}</p>
       </div>
       {data.map((i, idx) => (
-        <Link
-          href={`/news?category=${i.slug}`}
+        <span
+          style={{cursor: 'pointer'}}
+          onClick={() => goToNewsCategory(i.slug)}
           key={idx}
-          className={clsx(styles.cateWp, "animation")}
+          className={
+          clsx(styles.cateWp, "animation",
+            {[styles.active]: categoryActive && categoryActive === i.slug})}
         >
           <p className={styles.cateTitle}>{i.title}</p>
           <p className={styles.cateCount}>
             {formatPrefixNumber(i.posts.count)}
           </p>
-        </Link>
+        </span>
       ))}
     </div>
   );
