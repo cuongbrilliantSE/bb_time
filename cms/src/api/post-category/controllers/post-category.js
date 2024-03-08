@@ -13,6 +13,7 @@ module.exports = createCoreController("api::post-category.post-category", {
       "api::post-category.post-category",
       {
         fields: ["slug", "title"],
+        locale: query.locale,
         populate: {
           posts: { count: true },
         },
