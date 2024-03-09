@@ -18,14 +18,26 @@ export default async function PostPage({params, searchParams}) {
   const page = searchParams?.page || 1;
   const dictionary = await getDictionary(params.lang);
 
-  const filters = searchParams.category ? {
-      post_category: {
-        slug: {
-          $eq: searchParams.category
-        }
-      },
-    }
-    : undefined;
+  let filters = {};
+
+  if (searchParams.category) {
+    filters.post_category = {
+      slug: { $eq: searchParams.category }
+    };
+  }
+
+  if (searchParams.tag) {
+    filters.tags = {
+      slug: { $eq: searchParams.tag }
+    };
+  }
+
+// If no filters are applied, set it to undefined
+  if (Object.keys(filters).length === 0) {
+    filters = undefined;
+  }
+
+
   const [posts, postPage, categories, tags] = await getDataFromFetch([
     {
       object: "posts", query: {
