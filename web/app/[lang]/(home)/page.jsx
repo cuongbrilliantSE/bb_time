@@ -50,7 +50,7 @@ export default async function Home({ params }) {
       <FullPage
         data={data}
         footerData={{
-          footer: footer.data.attributes,
+          footer: footer.data?.attributes,
           categories: categories.data
         }}
         lang={params.lang}

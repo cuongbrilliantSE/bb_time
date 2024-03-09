@@ -27,7 +27,7 @@ export default async function RootLayout({ children, params }) {
       <Footer
         lang={params.lang}
         footerData={{
-          footer: footer.data.attributes,
+          footer: footer.data?.attributes,
           categories: categories.data
         }}
         i18n={dictionary.footer} />

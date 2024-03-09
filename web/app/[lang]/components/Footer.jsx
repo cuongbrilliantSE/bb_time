@@ -69,15 +69,15 @@ const Footer = ({lang, footerData, i18n}) => {
             <p className="footer-col-title">{i18n.contact}</p>
             <span  className="footer-link-item">
               <img src={PhoneImg.src}/>
-              {footerData.footer.phone}
+              {footerData.footer?.phone}
             </span>
             <span href="#" className="footer-link-item">
               <img src={EmailImg.src}/>
-              {footerData.footer.email}
+              {footerData.footer?.email}
             </span>
             <span href="#" className="footer-link-item">
               <img src={LocationImg.src}/>
-              {footerData.footer.address}
+              {footerData.footer?.address}
             </span>
           </div>
           <div className={clsx("footer-col", "footer-sns-wp")}>
