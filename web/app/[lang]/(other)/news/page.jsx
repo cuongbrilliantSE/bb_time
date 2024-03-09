@@ -90,14 +90,14 @@ export default async function PostPage({params, searchParams}) {
       <div className={styles.wp}>
         <div style={{height: 'fit-content'}} className={styles.postWp}>
           <p className={clsx(styles.title, "animation")}>
-            <b>{foundItem.title}</b>
+            <b>{foundItem?.title}</b>
           </p>
           {posts && posts.data.length ? posts.data.map((i, idx) => (
               <div className={styles.postItem} key={idx}>
                 <PostItem i18n={dictionary.post} data={i.attributes}/>
               </div>
             )) :
-            (<span style={{marginLeft: '25px'}}>Danh sách trống</span>)
+            (<span className={styles.listEmpty}>Danh sách trống</span>)
           }
           {/*{posts && !posts.data.length && (<span style={{marginLeft: '25px'}}>Danh sách trống</span>)}*/}
         </div>
