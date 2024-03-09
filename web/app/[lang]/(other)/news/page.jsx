@@ -90,7 +90,7 @@ export default async function PostPage({params, searchParams}) {
       <div className={styles.wp}>
         <div style={{height: 'fit-content'}} className={styles.postWp}>
           <p className={clsx(styles.title, "animation")}>
-            <b>{foundItem?.title}</b>
+            <b>{foundItem ? foundItem.title :  dictionary.post.news}</b>
           </p>
           {posts && posts.data.length ? posts.data.map((i, idx) => (
               <div className={styles.postItem} key={idx}>
