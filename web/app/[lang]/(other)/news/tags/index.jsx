@@ -10,6 +10,8 @@ const Tags = ({ i18n, data }) => {
     const tagActive = params.get('tag') || null;
 
 
+    console.log(tagActive)
+
     const goToTags = (tag) => {
         if (!tag) {
             return;
@@ -24,7 +26,10 @@ const Tags = ({ i18n, data }) => {
       </div>
       <div className={styles.tagList}>
         {data.map((i, idx) => (
-          <div key={idx} className={clsx(styles.item, "animation")}
+          <div key={idx} className={clsx(
+              styles.item, "animation",
+              {[styles.active]: tagActive && tagActive === i.attributes.slug}
+          )}
                onClick={() => goToTags(i.attributes.slug)}>
             {i.attributes.title}
           </div>
