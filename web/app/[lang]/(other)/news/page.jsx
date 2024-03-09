@@ -74,6 +74,8 @@ export default async function PostPage({params, searchParams}) {
     }
   ]);
 
+  const foundItem = categories.find(item => item.slug === searchParams.category);
+
   return (<main>
     <ImageResponsive
       className="max-width-container"
@@ -88,8 +90,7 @@ export default async function PostPage({params, searchParams}) {
       <div className={styles.wp}>
         <div style={{height: 'fit-content'}} className={styles.postWp}>
           <p className={clsx(styles.title, "animation")}>
-            <b>{dictionary.post.news}</b>
-            {dictionary.post.ours}
+            <b>{foundItem.title}</b>
           </p>
           {posts && posts.data.length ? posts.data.map((i, idx) => (
               <div className={styles.postItem} key={idx}>
