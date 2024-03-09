@@ -9,9 +9,6 @@ const Tags = ({ i18n, data }) => {
     const params = useSearchParams()
     const tagActive = params.get('tag') || null;
 
-
-    console.log(tagActive)
-
     const goToTags = (tag) => {
         if (!tag) {
             return;
