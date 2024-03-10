@@ -115,7 +115,7 @@ export default async function PostPage({params, searchParams}) {
         </div>
         <div className={styles.sideWp}>
           <ListCategories i18n={dictionary.post} data={categories}/>
-          <Gallery i18n={dictionary.post}/>
+          {/*<Gallery i18n={dictionary.post}/>*/}
           <Tags i18n={dictionary.post} data={tags.data}/>
         </div>
       </div>
