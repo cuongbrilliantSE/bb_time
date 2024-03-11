@@ -9,10 +9,11 @@ import ImageResponsive from "@/app/components/ImageResponsive";
 import {usePathname, useRouter} from "next/navigation";
 
 const PostRelated = ({ i18n, product }) => {
-  if (!!product?.posts?.length) return null;
 
   const router = useRouter();
   const pathName = usePathname();
+
+  if (!!product?.posts?.length) return null;
 
   function goToNewsDetail(slug) {
     if (!slug) {
