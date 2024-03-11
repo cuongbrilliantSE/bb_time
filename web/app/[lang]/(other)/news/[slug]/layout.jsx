@@ -81,7 +81,7 @@ export default async function DetailPostLayout({ params, children }) {
           <div className={styles.postWp}>{children}</div>
           <div className={styles.sideWp}>
             <ListCategories i18n={dictionary.post} data={categories} />
-            <Gallery i18n={dictionary.post} />
+            {/*<Gallery i18n={dictionary.post} />*/}
             <Tags i18n={dictionary.post} data={tags.data} />
           </div>
         </div>

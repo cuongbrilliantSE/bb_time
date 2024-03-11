@@ -114,7 +114,7 @@ export default async function PostPage({params, searchParams}) {
           {/*{posts && !posts.data.length && (<span style={{marginLeft: '25px'}}>Danh sách trống</span>)}*/}
         </div>
         <div className={styles.sideWp}>
-          <ListCategories i18n={dictionary.post} data={categories}/>
+          <ListCategories lang={params.lang} i18n={dictionary.post} data={categories}/>
           {/*<Gallery i18n={dictionary.post}/>*/}
           <Tags i18n={dictionary.post} data={tags.data}/>
         </div>
