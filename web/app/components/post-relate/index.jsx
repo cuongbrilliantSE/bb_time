@@ -72,15 +72,15 @@ const PostRelated = ({ i18n, product }) => {
         {product?.posts?.data.map((i, idx) => (
           <div key={idx} className={styles.item}>
             <div className={clsx(styles.img, "animation")}>
-              <ImageResponsive data={i.attributes.thumb.data.attributes} />
+              <ImageResponsive data={i.attributes?.thumb?.data?.attributes} />
             </div>
             <p className={clsx(styles.title, "animation")}>
-              {i.attributes.title}
+              {i.attributes?.title}
             </p>
             <span
               style={{cursor: 'pointer'}}
-              href={`/news/${i.attributes.slug}`}
-              onClick={() => goToNewsDetail(i.attributes.slug)}
+              href={`/news/${i.attributes?.slug}`}
+              onClick={() => goToNewsDetail(i.attributes?.slug)}
               className={clsx(styles.btn, "animation")}
               data-animation="fade-in-up"
             >
