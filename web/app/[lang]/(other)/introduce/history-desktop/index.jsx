@@ -34,7 +34,7 @@ const HistoryDesktop = ({ data }) => {
                   data-animation={idx % 2 == 1 ? "fade-in-up" : "fade-in-down"}
                 >
                   <div>
-                    <ImageResponsive data={i.image.data.attributes} />
+                    <ImageResponsive data={i?.image?.data?.attributes} />
                   </div>
                 </div>
                 <div

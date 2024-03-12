@@ -18,7 +18,7 @@ const Commit = ({ i18n, data }) => {
             {data.commits.map((i, idx) => (
               <div key={idx} className={styles.item}>
                 <div className={clsx(styles.imgItem, "animation")}>
-                  <img src={getImgUrl(i.image.data.attributes.url)} />
+                  <img src={getImgUrl(i?.image?.data?.attributes.url)} />
                 </div>
                 <div className={styles.in4}>
                   <p className={clsx(styles.title, "animation")}>{i.title}</p>

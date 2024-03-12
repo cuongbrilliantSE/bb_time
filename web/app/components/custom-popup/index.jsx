@@ -29,7 +29,7 @@ const CustomPopup = ({ trigger, header, content_html }) => {
     const arrowStyle = { color: '#000' };
 
     // Determine which content style to use based on screen size
-    const currentContentStyle = window?.innerWidth <= 768 ? mobileContentStyle : contentStyle;
+    const currentContentStyle = window && window?.innerWidth <= 768 ? mobileContentStyle : contentStyle;
 
     return (
         <Popup

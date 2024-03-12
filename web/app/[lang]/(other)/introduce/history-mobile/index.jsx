@@ -8,7 +8,7 @@ const HistoryMobile = ({ data }) => {
       {data.map((i, idx) => (
         <div key={idx} className={clsx(styles.item, "animation")}>
           <div className={styles.img}>
-            <ImageResponsive data={i.image.data.attributes} />
+            <ImageResponsive data={i?.image?.data?.attributes} />
           </div>
           <div className={styles.divider}></div>
           <div className={styles.txtWp}>

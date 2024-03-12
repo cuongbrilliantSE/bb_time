@@ -27,7 +27,7 @@ const Mission = ({ data }) => {
                       />
                       <img
                         className={styles.imgLight}
-                        src={getImgUrl(i.image.data.attributes.url)}
+                        src={getImgUrl(i?.image?.data?.attributes.url)}
                       />
                     </div>
                   </div>

@@ -68,7 +68,7 @@ export default async function PostDetailPage({ params, searchParams }) {
       </div>
 
       <div className={clsx(styles.thumb, "animation")}>
-        <ImageResponsive data={data.thumb.data.attributes} />
+        <ImageResponsive data={data?.thumb?.data?.attributes} />
       </div>
       {/*<Summary i18n={dictionary.post} />*/}
       <div
