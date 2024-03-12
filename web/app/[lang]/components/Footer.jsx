@@ -24,20 +24,19 @@ const Footer = ({lang, footerData, i18n}) => {
       });
     }, 450)
   }
+
   const goToCategory = (id) => {
     if (!id) {
       return;
     }
-
-    if (pathName.includes('/product')) {
-      router.replace(`/product#${id}`);
-    } else if(pathName === '/en' || pathName === '/vi') {
-      router.push(`${lang}/product#${id}`);
-    } else {
-      router.replace(`/product#${id}`);
-    }
+    router.push(`/${lang}/product#${id}`);
     scrollTo();
   }
+
+  const goToNewsList = () => {
+    router.push(`/${lang}/news`);
+  }
+
   return (
     <section>
       <div className={clsx("container", "footer-wp")}>
@@ -51,7 +50,6 @@ const Footer = ({lang, footerData, i18n}) => {
               footerData?.categories && footerData.categories.map((item,idx) => (
                 <span
                   key={`list-product-${idx}`}
-                  href={`${lang}/product#${item.attributes.IdCategory}`}
                   onClick={() => goToCategory(item.attributes.IdCategory)}
                   className="footer-link-item pointer">
                   {item.attributes.title}
@@ -61,9 +59,9 @@ const Footer = ({lang, footerData, i18n}) => {
           </div>
           <div className="footer-col">
             <p className="footer-col-title">{i18n.news}</p>
-            <Link href={`${lang}/news`} className="footer-link-item">
+            <span onClick={() => goToNewsList()} className="footer-link-item">
               {i18n.news_bbtime}
-            </Link>
+            </span>
           </div>
           <div className="footer-col">
             <p className="footer-col-title">{i18n.contact}</p>

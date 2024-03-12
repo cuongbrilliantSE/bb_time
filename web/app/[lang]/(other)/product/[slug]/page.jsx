@@ -50,12 +50,11 @@ export default async function DetailProduct({ params }) {
     },
   ]);
 
-  //   console.log(detailPrd.meta.total);
   if (detailPrd.meta.pagination.total != 1) {
     notFound();
   }
   const product = detailPrd.data[0].attributes;
-  //   console.log(JSON.stringify(product));
+
   return (
     <Fragment>
       <ImageResponsive
