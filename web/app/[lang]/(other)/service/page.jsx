@@ -34,7 +34,7 @@ export default async function Service({params}) {
   return (
     <main>
       <ImageResponsive
-        className="max-width-container"
+        className={styles.w100}
         data={servicePage?.data?.attributes?.banner?.data?.attributes}
       />
       <div className="container">
