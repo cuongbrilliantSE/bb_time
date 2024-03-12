@@ -45,7 +45,7 @@ const Attributes = ({ data }) => {
             <div key={idx}>
               <div className={styles.item}>
                 <div className={clsx(styles.img, "animation")}>
-                  <img src={getImgUrl(i.image.data.attributes.url)} />
+                  <img src={getImgUrl(i?.image?.data?.attributes.url)} />
                 </div>
                 <div className={clsx(styles.divider, "animation")}></div>
                 <div className={styles.txt}>

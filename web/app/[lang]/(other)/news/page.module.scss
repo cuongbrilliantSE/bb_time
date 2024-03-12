@@ -129,6 +129,9 @@
     padding-left: 20px;
     padding-top: 20px;
   }
+  .listEmpty {
+    margin-left: 25px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -170,6 +173,10 @@
   .postItem {
     padding-left: 50px;
     padding-top: 50px;
+  }
+
+  .listEmpty {
+    margin-left: 50px;
   }
   .sideWp {
     padding-left: 47px;

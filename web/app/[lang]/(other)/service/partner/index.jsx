@@ -18,7 +18,7 @@ const Partner = ({ data }) => {
             className={clsx(styles.item, "animation")}
             data-animation-delay={`${0.2 * idx + 0.2}s`}
           >
-            <img src={getImgUrl(i.image.data.attributes.url)} />
+            <img src={getImgUrl(i?.image?.data?.attributes.url)} />
           </div>
         ))}
       </section>
@@ -48,7 +48,7 @@ const Partner = ({ data }) => {
               className={clsx(styles.item, "animation")}
               data-animation-delay={`${0.2 * idx + 0.2}s`}
             >
-              <img src={getImgUrl(i.image.data.attributes.url)} />
+              <img src={getImgUrl(i?.image?.data?.attributes.url)} />
             </div>
           ))}
         </Slider>

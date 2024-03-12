@@ -4,15 +4,22 @@ import MenuImg from "@assets/icons/menu_line.svg";
 import Link from "next/link";
 import styles from "./style.module.scss";
 import { formatPrefixNumber } from "@lib/index";
-import {useRouter, useSearchParams} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 
 const ListCategories = ({ i18n, data }) => {
+
   const router = useRouter();
   const params = useSearchParams()
+  const pathName = usePathname();
   const categoryActive = params.get('category') || null;
 
   const goToNewsCategory = (slug) => {
     if (!slug) {
+      return;
+    }
+    if (pathName.includes('news/')) {
+      const uri = pathName.split('news/')[0];
+      router.replace(`${uri}/news?category=${slug}`);
       return;
     }
     router.push(`news?category=${slug}`);

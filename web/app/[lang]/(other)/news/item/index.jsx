@@ -26,7 +26,7 @@ const PostItem = ({ data, i18n }) => {
   return (
     <div className={styles.wp}>
       <div className={clsx(styles.img, "animation", "fade-in-down")}>
-        <ImageResponsive data={data.thumb.data.attributes} />
+        <ImageResponsive data={data?.thumb?.data?.attributes} />
       </div>
       <span
         onClick={() => goToNewsDetail(data.slug)}
