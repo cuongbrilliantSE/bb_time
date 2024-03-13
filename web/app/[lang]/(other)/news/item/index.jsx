@@ -10,7 +10,7 @@ import clsx from "clsx";
 import ChevronRightImg from "@components/ChevronRight";
 import {usePathname, useRouter} from "next/navigation";
 
-const PostItem = ({ data, i18n }) => {
+const PostItem = ({ lang, data, i18n }) => {
   const router = useRouter();
   const pathName = usePathname();
 
@@ -19,7 +19,7 @@ const PostItem = ({ data, i18n }) => {
       return;
     }
     if (pathName.includes('/news')) {
-      router.push(`news/${slug}`);
+      router.push(`/${lang}/news/${slug}`);
     }
   }
 

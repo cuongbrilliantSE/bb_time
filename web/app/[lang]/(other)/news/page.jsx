@@ -106,7 +106,7 @@ export default async function PostPage({params, searchParams}) {
           </p>
           {posts && posts.data.length ? posts.data.map((i, idx) => (
               <div className={styles.postItem} key={idx}>
-                <PostItem i18n={dictionary.post} data={i.attributes}/>
+                <PostItem lang={params.lang} i18n={dictionary.post} data={i.attributes}/>
               </div>
             )) :
             (<span className={styles.listEmpty}>Danh sách trống</span>)
