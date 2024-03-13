@@ -1,7 +1,6 @@
 'use client'
 import styles from "./style.module.scss";
 import ImageResponsive from "@/app/components/ImageResponsive";
-import Link from "next/link";
 import { getImgUrl } from "@lib/index";
 import CalendarImg from "@assets/icons/calendar.svg";
 import ClockImg from "@assets/icons/clock.svg";
@@ -60,13 +59,13 @@ const PostItem = ({ lang, data, i18n }) => {
         </div>
       </div>
       <p className={clsx(styles.desTxt, "animation", "fade-in-down")}>{data.description}</p>
-      <Link
-        href={`/news/${data.slug}`}
+      <span
+        onClick={() => goToNewsDetail(data.slug)}
         className={clsx(styles.detailBtn, "animation", "fade-in-down")}
       >
         <p>{i18n.view_detail}</p>
         <ChevronRightImg />
-      </Link>
+      </span>
     </div>
   );
 };
