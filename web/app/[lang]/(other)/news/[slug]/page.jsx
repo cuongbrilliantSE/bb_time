@@ -44,9 +44,11 @@ export default async function PostDetailPage({ params, searchParams }) {
 
   const data = detailPost.data[0].attributes;
 
+  console.log(data.summary, '=asd=asd=as=d=as')
+
   return (
     <>
-      <p className={clsx(styles.title, "animation")}>{data.title}</p>
+      <h1 className={clsx(styles.title, "animation")}>{data.title}</h1>
       <div className={styles.des}>
         <div className={clsx(styles.author, "animation")}>
           <div className={styles.authorAvatar}>
@@ -59,6 +61,7 @@ export default async function PostDetailPage({ params, searchParams }) {
           <p className={styles.authorName}>
             {data?.author?.data?.attributes?.username}
           </p>
+          <a href=""></a>
         </div>
         <div className={clsx(styles.divider, "animation")}></div>
         <div className={clsx(styles.updatedAt, "animation")}>
@@ -70,7 +73,7 @@ export default async function PostDetailPage({ params, searchParams }) {
       <div className={clsx(styles.thumb, "animation")}>
         <ImageResponsive data={data?.thumb?.data?.attributes} />
       </div>
-      {/*<Summary i18n={dictionary.post} />*/}
+      {data.summary && <Summary i18n={dictionary.post} data={data.summary}/>}
       <div
         className={clsx(styles.contents, "animation")}
         dangerouslySetInnerHTML={{ __html: data.content_html }}
