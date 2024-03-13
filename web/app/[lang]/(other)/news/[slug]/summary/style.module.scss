@@ -1,3 +1,27 @@
+.container {
+
+  padding: 16px 32px;
+  border-radius: 8px;
+  background: var(--blue-1);
+
+  .titleSummary {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .summary {
+    padding-left: 8px;
+    a {
+      line-height: 24px;
+      display: block;
+      cursor: pointer;
+
+      &:hover {
+        color: #126cab;
+      }
+    }
+  }
+}
 .wp {
   margin: 20px 0;
   background: var(--blue-1);
