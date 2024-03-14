@@ -56,17 +56,7 @@ const Header = ({ lang, i18n, categories }) => {
     if (!url) {
       return;
     }
-
-    const uri = url.split('/')[2];
-    if (pathName.includes('/product/')) {
-
-      router.replace(uri);
-    } else if(pathName === '/en' || pathName === '/vi') {
-
-      router.push(`${lang}${url}`);
-    } else {
-      router.push(url);
-    }
+    router.push(`/${lang}${url}`);
   }
 
   return (

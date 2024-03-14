@@ -35,7 +35,7 @@ const PostRelated = ({ i18n, product }) => {
         infinite
         adaptiveHeight
         speed={500}
-        className={styles.slider}
+        className={clsx(styles.slider, styles.sliderLeft)}
         slidesToScroll={2}
         slidesToShow={4}
         responsive={[

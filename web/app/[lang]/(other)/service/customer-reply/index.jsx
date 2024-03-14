@@ -5,7 +5,6 @@ import FiveStarImg from "@assets/icons/five_star.svg";
 import { getImgUrl } from "@lib/index";
 
 const CustomerReply = ({ i18n, data }) => {
-  //   console.log(data.customer_responses);
   return (
     <section className="container">
       <div className={styles.wp}>

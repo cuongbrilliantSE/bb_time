@@ -44,8 +44,6 @@ export default async function PostDetailPage({ params, searchParams }) {
 
   const data = detailPost.data[0].attributes;
 
-  console.log(data.summary, '=asd=asd=as=d=as')
-
   return (
     <>
       <h1 className={clsx(styles.title, "animation")}>{data.title}</h1>
