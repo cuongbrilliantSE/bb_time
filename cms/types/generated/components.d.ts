@@ -131,7 +131,7 @@ export interface ProductGallery extends Schema.Component {
     file: Attribute.Media;
     title: Attribute.String;
     description: Attribute.Text;
-    link: Attribute.Text;
+    link: Attribute.Text & Attribute.Required;
   };
 }
 
