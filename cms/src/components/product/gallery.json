@@ -14,24 +14,11 @@
         "images"
       ]
     },
-    "file": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
     "title": {
       "type": "string"
     },
     "description": {
       "type": "text"
-    },
-    "link": {
-      "type": "text",
-      "required": true
     }
   }
 }
