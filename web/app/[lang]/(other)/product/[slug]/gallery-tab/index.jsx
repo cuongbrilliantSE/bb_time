@@ -14,7 +14,6 @@ const Gallery = ({ i18n, product }) => {
           <Slider
               dots={false}
               infinite
-              loop={false}
               speed={500}
               slidesToScroll={Math.min(product?.galleries2?.length, 3)}
               slidesToShow={Math.min(product?.galleries2?.length, 3)}
