@@ -22,7 +22,7 @@
     },
     "link": {
       "type": "string",
-      "default": "link",
+      "default": "https://www.youtube.com/embed/pMuCUbvP_5Q?si=fef5ma2SGlV7u9sW",
       "required": false
     }
   }
