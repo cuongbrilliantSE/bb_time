@@ -130,6 +130,7 @@ export interface ProductGallery extends Schema.Component {
     thumb: Attribute.Media;
     title: Attribute.String;
     description: Attribute.Text;
+    link: Attribute.String & Attribute.DefaultTo<'link'>;
   };
 }
 
