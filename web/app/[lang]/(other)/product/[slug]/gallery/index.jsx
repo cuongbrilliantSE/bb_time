@@ -9,7 +9,7 @@ import clsx from "clsx";
 import BgImg from "@assets/bg/bg_detail.svg";
 
 const Gallery = ({ data }) => {
-  const [dataImg, setDataImg] = useState(data[0]?.file?.data?.attributes);
+  const [dataImg, setDataImg] = useState(data[0]?.thumb?.data?.attributes);
   const settings = {
     dots: false,
     infinite: false,
@@ -34,7 +34,7 @@ const Gallery = ({ data }) => {
             <div
               key={index}
               onClick={() => {
-                setDataImg(item.file.data.attributes);
+                setDataImg(item.thumb.data.attributes);
               }}
               className={clsx(styles.item, "animation")}>
               <img src={BgImg.src} />
