@@ -11,6 +11,15 @@
   }
 }
 
+.postItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lineHorizontal {
+  border-bottom: solid 1px #c4c4c4;
+}
+
 @media only screen and (min-height: 768px) {
   .banner {
     height: 400px;

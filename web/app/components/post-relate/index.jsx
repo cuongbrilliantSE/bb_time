@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import ImageResponsive from "@/app/components/ImageResponsive";
 import {usePathname, useRouter} from "next/navigation";
 
-const PostRelated = ({ i18n, product }) => {
+const PostRelated = ({ lang, i18n, product }) => {
 
   const router = useRouter();
   const pathName = usePathname();
@@ -19,12 +19,7 @@ const PostRelated = ({ i18n, product }) => {
     if (!slug) {
       return;
     }
-    if (pathName.includes('news/')) {
-      const uri = pathName.split('news/')[0];
-      router.replace(`${uri}/news/${slug}`);
-      return;
-    }
-    router.push(`news/${slug}`);
+    router.push(`/${lang}/news/${slug}`);
   }
 
   return (
@@ -79,7 +74,6 @@ const PostRelated = ({ i18n, product }) => {
             </p>
             <span
               style={{cursor: 'pointer'}}
-              href={`/news/${i.attributes?.slug}`}
               onClick={() => goToNewsDetail(i.attributes?.slug)}
               className={clsx(styles.btn, "animation")}
               data-animation="fade-in-up"

@@ -87,7 +87,7 @@ export default async function DetailPostLayout({ params, children }) {
         </div>
       <Share from="layout" />
       <section className={clsx("container", styles.lgContainer)}>
-        <PostRelated product={detailPost} i18n={dictionary.product} />
+        <PostRelated lang={params.lang} product={detailPost} i18n={dictionary.product} />
       </section>
 
       </div>
