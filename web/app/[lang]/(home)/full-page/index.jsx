@@ -108,8 +108,8 @@ const FullPage = ({ lang, data, footerData, i18n, i18nFooter }) => {
               dots={false}
               infinite
               speed={500}
-              slidesToShow={4}
-              slidesToScroll={4}
+              slidesToShow={3}
+              slidesToScroll={3}
               autoplay
             >
               {data[1].data.map((category, idx) => (
